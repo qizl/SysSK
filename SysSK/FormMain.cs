@@ -25,5 +25,15 @@ namespace SysSK
         {
             this.Close();
         }
+
+        private void btnChooseShortKeysSavePath_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
