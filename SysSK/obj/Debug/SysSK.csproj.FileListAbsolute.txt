@@ -1,0 +1,8 @@
+E:\PL\MyProjects\GitHub\SysSK\SysSK\bin\Debug\SysSK.exe
+E:\PL\MyProjects\GitHub\SysSK\SysSK\bin\Debug\SysSK.pdb
+E:\PL\MyProjects\GitHub\SysSK\SysSK\obj\Debug\SysSK.csprojResolveAssemblyReference.cache
+E:\PL\MyProjects\GitHub\SysSK\SysSK\obj\Debug\SysSK.FormMain.resources
+E:\PL\MyProjects\GitHub\SysSK\SysSK\obj\Debug\SysSK.Properties.Resources.resources
+E:\PL\MyProjects\GitHub\SysSK\SysSK\obj\Debug\SysSK.csproj.GenerateResource.Cache
+E:\PL\MyProjects\GitHub\SysSK\SysSK\obj\Debug\SysSK.exe
+E:\PL\MyProjects\GitHub\SysSK\SysSK\obj\Debug\SysSK.pdb
