@@ -53,6 +53,10 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\App.cs" />
+    <Compile Include="Models\Cmds.cs" />
+    <Compile Include="Models\Config.cs" />
+    <Compile Include="Models\Regedit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">

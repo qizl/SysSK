@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SysSK.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +12,22 @@ namespace SysSK
 {
     public partial class FormMain : Form
     {
+        private Regedit _regedit = new Regedit();
         public FormMain()
         {
             InitializeComponent();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            this.initialize();
+        }
+        void initialize()
+        {
+            List<App> apps = this._regedit.ReadApps();
+            this.dgvShortKeys.Rows.Clear();
+            foreach (var app in apps)
+                this.dgvShortKeys.Rows.Add(app.Name, app.Publisher, app.Location, app.ShortKey);
         }
 
         private void btnOk_Click(object sender, EventArgs e)

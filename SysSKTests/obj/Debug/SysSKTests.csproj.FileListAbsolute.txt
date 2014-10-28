@@ -1,0 +1,7 @@
+E:\PL\MyProjects\GitHub\SysSK\SysSKTests\bin\Debug\SysSKTests.dll
+E:\PL\MyProjects\GitHub\SysSK\SysSKTests\bin\Debug\SysSKTests.pdb
+E:\PL\MyProjects\GitHub\SysSK\SysSKTests\bin\Debug\SysSK.exe
+E:\PL\MyProjects\GitHub\SysSK\SysSKTests\bin\Debug\SysSK.pdb
+E:\PL\MyProjects\GitHub\SysSK\SysSKTests\obj\Debug\SysSKTests.csprojResolveAssemblyReference.cache
+E:\PL\MyProjects\GitHub\SysSK\SysSKTests\obj\Debug\SysSKTests.dll
+E:\PL\MyProjects\GitHub\SysSK\SysSKTests\obj\Debug\SysSKTests.pdb
