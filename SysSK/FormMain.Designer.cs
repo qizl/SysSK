@@ -45,11 +45,19 @@
             this.txtShortKeysSavePath = new System.Windows.Forms.TextBox();
             this.btnChooseShortKeysSavePath = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
+            this.dgvShortKeys = new System.Windows.Forms.DataGridView();
+            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPublish = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmShortKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             this.plFoot.SuspendLayout();
             this.plBody.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.gbxConfig.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShortKeys)).BeginInit();
             this.SuspendLayout();
             // 
             // plFoot
@@ -98,6 +106,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 10F);
             this.tabControl1.Location = new System.Drawing.Point(8, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -107,20 +116,23 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.gbxConfig);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(639, 375);
+            this.tabPage1.Size = new System.Drawing.Size(639, 372);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "常规";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.dgvShortKeys);
+            this.tabPage2.Font = new System.Drawing.Font("Arial", 10F);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(639, 375);
+            this.tabPage2.Size = new System.Drawing.Size(639, 372);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "快捷键";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -181,9 +193,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 16);
+            this.label1.Size = new System.Drawing.Size(328, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Win + R 输入已绑定的快捷键，即可打开应用程序";
+            this.label1.Text = "Win + R 输入快捷键，点击确定即可打开绑定的应用";
             // 
             // label2
             // 
@@ -227,6 +239,61 @@
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
+            // dgvShortKeys
+            // 
+            this.dgvShortKeys.AllowUserToAddRows = false;
+            this.dgvShortKeys.AllowUserToDeleteRows = false;
+            this.dgvShortKeys.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShortKeys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShortKeys.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmName,
+            this.clmPublish,
+            this.clmShortKey,
+            this.Column1});
+            this.dgvShortKeys.Location = new System.Drawing.Point(11, 20);
+            this.dgvShortKeys.Name = "dgvShortKeys";
+            this.dgvShortKeys.RowHeadersVisible = false;
+            this.dgvShortKeys.RowTemplate.Height = 23;
+            this.dgvShortKeys.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvShortKeys.Size = new System.Drawing.Size(616, 311);
+            this.dgvShortKeys.TabIndex = 0;
+            // 
+            // clmName
+            // 
+            this.clmName.HeaderText = "名称";
+            this.clmName.Name = "clmName";
+            this.clmName.ReadOnly = true;
+            this.clmName.Width = 200;
+            // 
+            // clmPublish
+            // 
+            this.clmPublish.HeaderText = "发布者";
+            this.clmPublish.Name = "clmPublish";
+            this.clmPublish.ReadOnly = true;
+            this.clmPublish.Width = 150;
+            // 
+            // clmShortKey
+            // 
+            this.clmShortKey.HeaderText = "快捷键";
+            this.clmShortKey.Name = "clmShortKey";
+            this.clmShortKey.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 1000;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 338);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(484, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "请注意，某些快捷键可能会与系统默认命令重复，请先验证快捷键是否可用。";
+            // 
             // FormMain
             // 
             this.AcceptButton = this.btnOk;
@@ -247,8 +314,11 @@
             this.plBody.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.gbxConfig.ResumeLayout(false);
             this.gbxConfig.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShortKeys)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,6 +341,12 @@
         private System.Windows.Forms.Button btnChooseShortKeysSavePath;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRestore;
+        private System.Windows.Forms.DataGridView dgvShortKeys;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPublish;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmShortKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Label label3;
 
     }
 }
