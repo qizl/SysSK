@@ -50,15 +50,16 @@ namespace SysSK
             /*
              * 保存命令路径到系统环境变量Path中
              */
-            if (Common.Config.IsEnabled)
-                this._regedit.AddSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
-            else
-                this._regedit.RemoveSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
+            if (Common.Config.CanRemoveCurrentFolder)
+                if (Common.Config.IsEnabled)
+                    this._regedit.AddSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
+                else
+                    this._regedit.RemoveSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
 
             /*
              * 读取注册表应用列表，保存到内存变量
              */
-            List<App> apps = this._regedit.ReadApps();
+            List<Cmd> apps = this._regedit.ReadApps();
             foreach (var item in apps)
                 if (Common.Config.ShortKeys.FirstOrDefault(s => s.Name == item.Name) == null)
                     Common.Config.ShortKeys.Add(item);
@@ -68,7 +69,7 @@ namespace SysSK
              */
             this.dgvShortKeys.Rows.Clear();
             foreach (var app in Common.Config.ShortKeys)
-                this.dgvShortKeys.Rows.Add(app.Name, app.Publisher, app.Location, app.ShortKey);
+                this.dgvShortKeys.Rows.Add(app.Name, app.Type, app.Location, app.ShortKey);
 
             /*
              * 更新配置
@@ -131,37 +132,58 @@ namespace SysSK
         {
             if (!string.IsNullOrEmpty(this.txtChooseApp.Text))
             {
-                FileInfo file = new FileInfo(this.txtChooseApp.Text);
-                string shortkey = file.Name.Split('.')[0];
-                string appName = file.Name;
-                string location = this.txtChooseApp.Text;
-
-                if (Common.Config.ShortKeys.FirstOrDefault(s => s.Name == appName && s.Location == location) != null)
+                if (File.Exists(this.txtChooseApp.Text))
                 {
-                    MessageBox.Show("该应用已添加到快捷键列表！");
+                    FileInfo file = new FileInfo(this.txtChooseApp.Text);
+                    string appName = file.Name;
+                    string shortkey = file.Name.Split('.')[0];
+                    string location = this.txtChooseApp.Text;
+
+                    if (Common.Config.ShortKeys.FirstOrDefault(s => s.Type == AppTypes.App && s.Name == appName && s.Location == location) != null)
+                    {
+                        MessageBox.Show("该应用已添加到快捷键列表！");
+                    }
+                    else
+                    {
+                        Common.Config.ShortKeys.Add(new Cmd() { Name = appName, Type = AppTypes.App, Location = location, ShortKey = shortkey });
+                        this.dgvShortKeys.Rows.Add(appName, AppTypes.App, location, shortkey);
+
+                        this.txtChooseApp.ResetText();
+                        this._isChanged = true;
+                    }
                 }
                 else
                 {
-                    Common.Config.ShortKeys.Add(new App() { Name = appName, Location = location, ShortKey = shortkey });
-                    this.dgvShortKeys.Rows.Add(appName, string.Empty, location, shortkey);
+                    string appName = this.txtChooseApp.Text;
+                    string shortkey = this.txtChooseApp.Text.Split('.')[0];
 
-                    this.txtChooseApp.ResetText();
-                    this._isChanged = true;
+                    if (Common.Config.ShortKeys.FirstOrDefault(s => s.Type == AppTypes.Cmd && s.Name == appName) != null)
+                    {
+                        MessageBox.Show("该命令已添加到快捷键列表！");
+                    }
+                    else
+                    {
+                        Common.Config.ShortKeys.Add(new Cmd() { Name = appName, Type = AppTypes.Cmd, ShortKey = shortkey });
+                        this.dgvShortKeys.Rows.Add(appName, AppTypes.Cmd, string.Empty, shortkey);
+
+                        this.txtChooseApp.ResetText();
+                        this._isChanged = true;
+                    }
                 }
             }
         }
 
         private void loadChange()
         {
-            List<App> apps = new List<App>();
+            List<Cmd> apps = new List<Cmd>();
             foreach (DataGridViewRow item in this.dgvShortKeys.Rows)
             {
                 if (item.Cells[3].Value != null && !string.IsNullOrWhiteSpace(item.Cells[3].Value.ToString()))
                 {
-                    App app = new App()
+                    Cmd app = new Cmd()
                     {
                         Name = item.Cells[0].Value == null ? string.Empty : item.Cells[0].Value.ToString(),
-                        Publisher = item.Cells[1].Value == null ? string.Empty : item.Cells[1].Value.ToString(),
+                        Type = item.Cells[1].Value == null ? AppTypes.Cmd : (AppTypes)Enum.Parse(typeof(AppTypes), item.Cells[1].Value.ToString()),
                         Location = item.Cells[2].Value == null ? string.Empty : item.Cells[2].Value.ToString(),
                         ShortKey = item.Cells[3].Value == null ? string.Empty : item.Cells[3].Value.ToString(),
                     };
@@ -184,21 +206,21 @@ namespace SysSK
 
             Common.Config.ShortKeysFolder = this.txtShortKeysSavePath.Text;
         }
-        private bool removeCmds(List<App> currentShortkeys, List<App> newshortKeys)
+        private bool removeCmds(List<Cmd> currentShortkeys, List<Cmd> newshortKeys)
         {
-            Cmds cmd = new Cmds();
+            CmdControl cmd = new CmdControl();
             cmd.RemoveAll(Common.Config.ShortKeysFolder);
             foreach (var item in currentShortkeys)
                 if (newshortKeys.FirstOrDefault(k => k.Name == item.Name && k.Location == item.Location) == null)
-                    cmd.RemoveCmd(item.ShortKey, Common.Config.ShortKeysFolder);
+                    cmd.RemoveCmd(item, Common.Config.ShortKeysFolder);
 
             return true;
         }
-        private bool createCmds(List<App> currentShortkeys, List<App> newshortKeys)
+        private bool createCmds(List<Cmd> currentShortkeys, List<Cmd> newshortKeys)
         {
-            Cmds cmd = new Cmds();
+            CmdControl cmd = new CmdControl();
             foreach (var item in newshortKeys)
-                cmd.CreateCmd(item.ShortKey, item.Location, Common.Config.ShortKeysFolder);
+                cmd.CreateCmd(item, Common.Config.ShortKeysFolder);
 
             return true;
         }
@@ -223,7 +245,10 @@ namespace SysSK
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (this.saveChange())
+            {
                 this.btnSubmit.Enabled = false;
+                this.initialize();
+            }
         }
     }
 }

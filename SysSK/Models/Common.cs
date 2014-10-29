@@ -15,7 +15,7 @@ namespace SysSK.Models
         {
             IsEnabled = true,
             CanRemoveCurrentFolder = true,
-            ShortKeys = new List<App>(),
+            ShortKeys = new List<Cmd>(),
             ShortKeysFolder = Path.Combine(Environment.CurrentDirectory, "bat"),
             CreateTime = DateTime.Now,
             UpdateTime = DateTime.Now

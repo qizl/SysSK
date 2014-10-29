@@ -11,16 +11,16 @@ namespace SysSKTests
         [TestMethod]
         public void TestCreateCmd()
         {
-            Cmds cmd = new Cmds();
-            cmd.CreateCmd("xunl", @"D:\Thunder\Program\Thunder.exe", Path.Combine(Environment.CurrentDirectory, "bat"));
+            //CmdControl cmd = new CmdControl();
+            //cmd.CreateCmd("xunl", @"D:\Thunder\Program\Thunder.exe", Path.Combine(Environment.CurrentDirectory, "bat"));
         }
 
         [TestMethod]
         public void TestRemoveCmd()
         {
-            string path = @"E:\qizl的文件夹\Practise\SysSK\SysSKTests\bin\Debug\bat\";
-            Cmds cmd = new Cmds();
-            cmd.RemoveCmd("xunl", path);
+            //string path = @"E:\qizl的文件夹\Practise\SysSK\SysSKTests\bin\Debug\bat\";
+            //CmdControl cmd = new CmdControl();
+            //cmd.RemoveCmd("xunl", path);
         }
     }
 }

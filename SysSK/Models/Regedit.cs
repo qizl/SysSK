@@ -12,9 +12,9 @@ namespace SysSK.Models
         /// 获取注册表中的应用列表
         /// </summary>
         /// <returns></returns>
-        public List<App> ReadApps()
+        public List<Cmd> ReadApps()
         {
-            List<App> apps = new List<App>();
+            List<Cmd> apps = new List<Cmd>();
 
             string appKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths";
             //string appKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
@@ -26,7 +26,7 @@ namespace SysSK.Models
                     {
                         try
                         {
-                            App app = new App() { Name = skName, Location = sk.GetValue("").ToString(), ShortKey = skName.Split('.')[0] };
+                            Cmd app = new Cmd() { Name = skName, Location = sk.GetValue("").ToString(), ShortKey = skName.Split('.')[0] };
                             apps.Add(app);
                         }
                         catch { }
@@ -48,7 +48,11 @@ namespace SysSK.Models
             if (!str.Contains(value))
             {
                 str += ";" + value;
-                Environment.SetEnvironmentVariable("Path", str, EnvironmentVariableTarget.Machine);
+                try
+                {
+                    Environment.SetEnvironmentVariable("Path", str, EnvironmentVariableTarget.Machine);
+                }
+                catch { return false; }
             }
 
             return true;
@@ -66,7 +70,11 @@ namespace SysSK.Models
             if (str.Contains(value))
             {
                 str = str.Replace(value, "");
-                Environment.SetEnvironmentVariable("Path", str, EnvironmentVariableTarget.Machine);
+                try
+                {
+                    Environment.SetEnvironmentVariable("Path", str, EnvironmentVariableTarget.Machine);
+                }
+                catch { return false; }
             }
 
             return true;

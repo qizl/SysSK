@@ -15,7 +15,7 @@ namespace SysSK.Models
         /// </summary>
         public bool CanRemoveCurrentFolder { get; set; }
         public string ShortKeysFolder { get; set; }
-        public List<App> ShortKeys { get; set; }
+        public List<Cmd> ShortKeys { get; set; }
 
         public DateTime CreateTime { get; set; }
         public DateTime UpdateTime { get; set; }

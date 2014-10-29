@@ -52,7 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgvShortKeys = new System.Windows.Forms.DataGridView();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPublish = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmShortKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -253,16 +253,15 @@
             // 
             this.txtChooseApp.BackColor = System.Drawing.Color.White;
             this.txtChooseApp.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtChooseApp.Location = new System.Drawing.Point(95, 334);
+            this.txtChooseApp.Location = new System.Drawing.Point(60, 334);
             this.txtChooseApp.Name = "txtChooseApp";
-            this.txtChooseApp.ReadOnly = true;
-            this.txtChooseApp.Size = new System.Drawing.Size(348, 26);
+            this.txtChooseApp.Size = new System.Drawing.Size(383, 26);
             this.txtChooseApp.TabIndex = 6;
             // 
             // btnChooseApp
             // 
             this.btnChooseApp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnChooseApp.Location = new System.Drawing.Point(449, 334);
+            this.btnChooseApp.Location = new System.Drawing.Point(449, 333);
             this.btnChooseApp.Name = "btnChooseApp";
             this.btnChooseApp.Size = new System.Drawing.Size(86, 28);
             this.btnChooseApp.TabIndex = 4;
@@ -286,9 +285,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 339);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 16);
+            this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 5;
-            this.label4.Text = "添加应用：";
+            this.label4.Text = "添加：";
             // 
             // label3
             // 
@@ -303,13 +302,12 @@
             // 
             this.dgvShortKeys.AllowUserToAddRows = false;
             this.dgvShortKeys.AllowUserToDeleteRows = false;
-            this.dgvShortKeys.AllowUserToResizeColumns = false;
             this.dgvShortKeys.AllowUserToResizeRows = false;
             this.dgvShortKeys.BackgroundColor = System.Drawing.Color.White;
             this.dgvShortKeys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShortKeys.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmName,
-            this.clmPublish,
+            this.clmType,
             this.clmPath,
             this.clmShortKey,
             this.Column1});
@@ -326,14 +324,13 @@
             // 
             this.clmName.HeaderText = "名称";
             this.clmName.Name = "clmName";
-            this.clmName.ReadOnly = true;
             this.clmName.Width = 130;
             // 
-            // clmPublish
+            // clmType
             // 
-            this.clmPublish.HeaderText = "发布者";
-            this.clmPublish.Name = "clmPublish";
-            this.clmPublish.ReadOnly = true;
+            this.clmType.HeaderText = "类型";
+            this.clmType.Name = "clmType";
+            this.clmType.ReadOnly = true;
             // 
             // clmPath
             // 
@@ -404,15 +401,15 @@
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.DataGridView dgvShortKeys;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPublish;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmShortKey;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TextBox txtChooseApp;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnChooseApp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmShortKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 
     }
 }

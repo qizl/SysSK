@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SysSK.Models
 {
-    public class Cmds
+    public class CmdControl
     {
         /// <summary>
         /// 新建命令文件
@@ -15,23 +15,36 @@ namespace SysSK.Models
         /// <param name="appPath">命令指向应用路径</param>
         /// <param name="cmdsFolder">命令文件保存路径</param>
         /// <returns></returns>
-        public bool CreateCmd(string cmd, string appPath, string cmdsFolder)
+        public bool CreateCmd(Cmd cmd, string cmdsFolder)
         {
             try
             {
-                string fileName = Path.Combine(cmdsFolder, cmd + ".bat");
-                FileInfo file = new FileInfo(appPath);
-                if (!Directory.Exists(cmdsFolder))
-                    Directory.CreateDirectory(cmdsFolder);
-
-                using (StreamWriter stream = new StreamWriter(fileName, false))
+                string fileName = Path.Combine(cmdsFolder, cmd.ShortKey + ".bat");
+                if (cmd.Type == AppTypes.App)
                 {
-                    stream.WriteLine("@echo off");
-                    stream.WriteLine(file.Directory.Root.ToString().Substring(0, 2));
-                    stream.WriteLine("cd \"" + file.DirectoryName + "\"");
-                    stream.WriteLine("start " + file.Name);
-                    stream.Flush();
-                    stream.Close();
+                    FileInfo file = new FileInfo(cmd.Location);
+                    if (!Directory.Exists(cmdsFolder))
+                        Directory.CreateDirectory(cmdsFolder);
+
+                    using (StreamWriter stream = new StreamWriter(fileName, false))
+                    {
+                        stream.WriteLine("@echo off");
+                        stream.WriteLine(file.Directory.Root.ToString().Substring(0, 2));
+                        stream.WriteLine("cd \"" + file.DirectoryName + "\"");
+                        stream.WriteLine("start " + file.Name);
+                        stream.Flush();
+                        stream.Close();
+                    }
+                }
+                else if (cmd.Type == AppTypes.Cmd)
+                {
+                    using (StreamWriter stream = new StreamWriter(fileName, false))
+                    {
+                        stream.WriteLine("@echo off");
+                        stream.WriteLine(cmd.Name);
+                        stream.Flush();
+                        stream.Close();
+                    }
                 }
             }
             catch { return false; }
@@ -45,9 +58,9 @@ namespace SysSK.Models
         /// <param name="cmd">命令（文件）名称，快捷键</param>
         /// <param name="cmdsFolder">命令文件保存路径</param>
         /// <returns></returns>
-        public bool RemoveCmd(string cmd, string cmdsFolder)
+        public bool RemoveCmd(Cmd cmd, string cmdsFolder)
         {
-            string fileName = Path.Combine(cmdsFolder, cmd + ".bat");
+            string fileName = Path.Combine(cmdsFolder, cmd.ShortKey + ".bat");
             try
             {
                 if (File.Exists(fileName))
