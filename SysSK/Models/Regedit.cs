@@ -44,7 +44,14 @@ namespace SysSK.Models
         /// <returns></returns>
         public bool AddSystemEnvironmentVariable_Path(string value)
         {
-            throw new NotImplementedException();
+            string str = Environment.GetEnvironmentVariable("Path");
+            if (!str.Contains(value))
+            {
+                str += ";" + value;
+                Environment.SetEnvironmentVariable("Path", str);
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -54,7 +61,17 @@ namespace SysSK.Models
         /// <returns></returns>
         public bool RemoveSystemEnvironmentVariable_Path(string value)
         {
-            throw new NotImplementedException();
+            this.AddSystemEnvironmentVariable_Path(value);
+
+            value = ";" + value;
+            string str = Environment.GetEnvironmentVariable("Path");
+            if (str.Contains(value))
+            {
+                str = str.Replace(value, "");
+                Environment.SetEnvironmentVariable("Path", str);
+            }
+
+            return true;
         }
     }
 }

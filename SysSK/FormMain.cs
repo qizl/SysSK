@@ -36,6 +36,14 @@ namespace SysSK
             this.txtShortKeysSavePath.Text = Common.Config.ShortKeysFolder;
 
             /*
+             * 保存命令路径到系统环境变量Path中
+             */
+            if (Common.Config.IsEnabled)
+                this._regedit.AddSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
+            else
+                this._regedit.RemoveSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
+
+            /*
              * 读取注册表应用列表，保存到内存变量
              */
             List<App> apps = this._regedit.ReadApps();
@@ -104,11 +112,6 @@ namespace SysSK
             }
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            if (this.saveChange())
-                this.Close();
-        }
         private void loadChange()
         {
             List<App> apps = new List<App>();
@@ -134,6 +137,11 @@ namespace SysSK
             Common.Config.ShortKeys.AddRange(apps);
 
             Common.Config.IsEnabled = this.cbxEnabledShortKeys.Enabled;
+            if (Common.Config.IsEnabled)
+                this._regedit.AddSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
+            else
+                this._regedit.RemoveSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
+
             Common.Config.ShortKeysFolder = this.txtShortKeysSavePath.Text;
         }
         private bool removeCmds(List<App> currentShortkeys, List<App> newshortKeys)
@@ -158,6 +166,12 @@ namespace SysSK
             this.loadChange();
 
             return Common.Config.Save(Common.ConfigPath);
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (this.saveChange())
+                this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

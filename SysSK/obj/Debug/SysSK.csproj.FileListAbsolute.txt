@@ -16,3 +16,4 @@ E:\qizl的文件夹\Practise\SysSK\SysSK\obj\Debug\SysSK.Properties.Resources.re
 E:\qizl的文件夹\Practise\SysSK\SysSK\obj\Debug\SysSK.csproj.GenerateResource.Cache
 E:\qizl的文件夹\Practise\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.dll
 E:\qizl的文件夹\Practise\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.pdb
+E:\qizl的文件夹\Practise\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.xml
