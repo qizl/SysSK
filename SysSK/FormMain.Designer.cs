@@ -45,6 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxEnabledShortKeys = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtChooseApp = new System.Windows.Forms.TextBox();
+            this.btnChooseApp = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvShortKeys = new System.Windows.Forms.DataGridView();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -188,7 +191,6 @@
             // btnChooseShortKeysSavePath
             // 
             this.btnChooseShortKeysSavePath.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnChooseShortKeysSavePath.Enabled = false;
             this.btnChooseShortKeysSavePath.Location = new System.Drawing.Point(522, 115);
             this.btnChooseShortKeysSavePath.Name = "btnChooseShortKeysSavePath";
             this.btnChooseShortKeysSavePath.Size = new System.Drawing.Size(86, 28);
@@ -229,6 +231,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtChooseApp);
+            this.tabPage2.Controls.Add(this.btnChooseApp);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.dgvShortKeys);
             this.tabPage2.Font = new System.Drawing.Font("Arial", 10F);
@@ -240,14 +245,45 @@
             this.tabPage2.Text = "快捷键";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtChooseApp
+            // 
+            this.txtChooseApp.BackColor = System.Drawing.Color.White;
+            this.txtChooseApp.Font = new System.Drawing.Font("Arial", 12F);
+            this.txtChooseApp.Location = new System.Drawing.Point(95, 334);
+            this.txtChooseApp.Name = "txtChooseApp";
+            this.txtChooseApp.ReadOnly = true;
+            this.txtChooseApp.Size = new System.Drawing.Size(440, 26);
+            this.txtChooseApp.TabIndex = 6;
+            // 
+            // btnChooseApp
+            // 
+            this.btnChooseApp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnChooseApp.Enabled = false;
+            this.btnChooseApp.Location = new System.Drawing.Point(541, 333);
+            this.btnChooseApp.Name = "btnChooseApp";
+            this.btnChooseApp.Size = new System.Drawing.Size(86, 28);
+            this.btnChooseApp.TabIndex = 4;
+            this.btnChooseApp.Text = "浏览...";
+            this.btnChooseApp.UseVisualStyleBackColor = true;
+            this.btnChooseApp.Click += new System.EventHandler(this.btnChooseApp_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 339);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "添加应用：";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 338);
+            this.label3.Location = new System.Drawing.Point(11, 308);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(484, 16);
+            this.label3.Size = new System.Drawing.Size(414, 16);
             this.label3.TabIndex = 2;
-            this.label3.Text = "请注意，某些快捷键可能会与系统默认命令重复，请先验证快捷键是否可用。";
+            this.label3.Text = "请注意，快捷键可能会与系统默认命令重复，请先验证是否可用。";
             // 
             // dgvShortKeys
             // 
@@ -268,7 +304,7 @@
             this.dgvShortKeys.RowHeadersVisible = false;
             this.dgvShortKeys.RowTemplate.Height = 23;
             this.dgvShortKeys.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvShortKeys.Size = new System.Drawing.Size(616, 311);
+            this.dgvShortKeys.Size = new System.Drawing.Size(616, 281);
             this.dgvShortKeys.TabIndex = 0;
             // 
             // clmName
@@ -358,6 +394,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmShortKey;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.TextBox txtChooseApp;
+        private System.Windows.Forms.Button btnChooseApp;
+        private System.Windows.Forms.Label label4;
 
     }
 }
