@@ -24,8 +24,12 @@ namespace SysSK.Models
                 {
                     using (RegistryKey sk = rk.OpenSubKey(skName))
                     {
-                        App app = new App() { Name = skName, Location = sk.GetValue("").ToString() };
-                        apps.Add(app);
+                        try
+                        {
+                            App app = new App() { Name = skName, Location = sk.GetValue("").ToString(), ShortKey = skName.Split('.')[0] };
+                            apps.Add(app);
+                        }
+                        catch { }
                     }
                 }
             }
