@@ -48,7 +48,7 @@ namespace SysSK.Models
             if (!str.Contains(value))
             {
                 str += ";" + value;
-                Environment.SetEnvironmentVariable("Path", str);
+                Environment.SetEnvironmentVariable("Path", str, EnvironmentVariableTarget.Machine);
             }
 
             return true;
@@ -61,14 +61,12 @@ namespace SysSK.Models
         /// <returns></returns>
         public bool RemoveSystemEnvironmentVariable_Path(string value)
         {
-            this.AddSystemEnvironmentVariable_Path(value);
-
             value = ";" + value;
             string str = Environment.GetEnvironmentVariable("Path");
             if (str.Contains(value))
             {
                 str = str.Replace(value, "");
-                Environment.SetEnvironmentVariable("Path", str);
+                Environment.SetEnvironmentVariable("Path", str, EnvironmentVariableTarget.Machine);
             }
 
             return true;
