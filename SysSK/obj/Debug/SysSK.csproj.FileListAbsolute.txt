@@ -17,3 +17,6 @@ E:\qizl的文件夹\Practise\SysSK\SysSK\obj\Debug\SysSK.csproj.GenerateResource
 E:\qizl的文件夹\Practise\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.dll
 E:\qizl的文件夹\Practise\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.pdb
 E:\qizl的文件夹\Practise\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.xml
+E:\PL\MyProjects\GitHub\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.dll
+E:\PL\MyProjects\GitHub\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.pdb
+E:\PL\MyProjects\GitHub\SysSK\SysSK\bin\Debug\SharpSerializerLibrary.xml

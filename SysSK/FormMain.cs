@@ -136,7 +136,7 @@ namespace SysSK
             Common.Config.ShortKeys.Clear();
             Common.Config.ShortKeys.AddRange(apps);
 
-            Common.Config.IsEnabled = this.cbxEnabledShortKeys.Enabled;
+            Common.Config.IsEnabled = this.cbxEnabledShortKeys.Checked;
             if (Common.Config.IsEnabled)
                 this._regedit.AddSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
             else
