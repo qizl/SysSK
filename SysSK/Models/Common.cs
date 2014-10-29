@@ -14,6 +14,7 @@ namespace SysSK.Models
         public static Config DefaultConfig = new Models.Config()
         {
             IsEnabled = true,
+            CanRemoveCurrentFolder = true,
             ShortKeys = new List<App>(),
             ShortKeysFolder = Path.Combine(Environment.CurrentDirectory, "bat"),
             CreateTime = DateTime.Now,

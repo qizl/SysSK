@@ -9,6 +9,11 @@ namespace SysSK.Models
     public class Config : Object, ICloneable
     {
         public bool IsEnabled { get; set; }
+        /// <summary>
+        /// 是否可以从系统环境变量中移除当前添加的路径
+        /// 其他应用添加的路径，不能移除
+        /// </summary>
+        public bool CanRemoveCurrentFolder { get; set; }
         public string ShortKeysFolder { get; set; }
         public List<App> ShortKeys { get; set; }
 

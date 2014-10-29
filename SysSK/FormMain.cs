@@ -13,6 +13,18 @@ namespace SysSK
 {
     public partial class FormMain : Form
     {
+        private bool _isChanged
+        {
+            get
+            {
+                return this.btnSubmit.Enabled;
+            }
+            set
+            {
+                this.btnSubmit.Enabled = value;
+            }
+        }
+
         private Regedit _regedit = new Regedit();
         public FormMain()
         {
@@ -63,21 +75,45 @@ namespace SysSK
              */
             Common.Config.UpdateTime = DateTime.Now;
             Common.Config.Save(Common.ConfigPath);
+
+            this._isChanged = false;
         }
 
+        private void cbxEnabledShortKeys_CheckedChanged(object sender, EventArgs e)
+        {
+            this._isChanged = true;
+        }
+
+        private void txtShortKeysSavePath_TextChanged(object sender, EventArgs e)
+        {
+            this._isChanged = true;
+        }
         private void btnChooseShortKeysSavePath_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    Common.Config.CanRemoveCurrentFolder = !(this._regedit.IsValueInSystemEnvironmentVariable_Path(dialog.SelectedPath) && this.txtShortKeysSavePath.Text != dialog.SelectedPath);
                     this.txtShortKeysSavePath.Text = dialog.SelectedPath;
+                }
             }
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            Common.Config = Common.DefaultConfig.Clone() as Config;
-            this.initialize();
+            if (MessageBox.Show("确认还原配置与快捷键吗？", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Common.Config = Common.DefaultConfig.Clone() as Config;
+                this.initialize();
+
+                this._isChanged = true;
+            }
+        }
+
+        private void dgvShortKeys_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            this._isChanged = true;
         }
 
         private void btnChooseApp_Click(object sender, EventArgs e)
@@ -108,6 +144,9 @@ namespace SysSK
                 {
                     Common.Config.ShortKeys.Add(new App() { Name = appName, Location = location, ShortKey = shortkey });
                     this.dgvShortKeys.Rows.Add(appName, string.Empty, location, shortkey);
+
+                    this.txtChooseApp.ResetText();
+                    this._isChanged = true;
                 }
             }
         }
@@ -137,16 +176,18 @@ namespace SysSK
             Common.Config.ShortKeys.AddRange(apps);
 
             Common.Config.IsEnabled = this.cbxEnabledShortKeys.Checked;
-            if (Common.Config.IsEnabled)
-                this._regedit.AddSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
-            else
-                this._regedit.RemoveSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
+            if (Common.Config.CanRemoveCurrentFolder)
+                if (Common.Config.IsEnabled)
+                    this._regedit.AddSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
+                else
+                    this._regedit.RemoveSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
 
             Common.Config.ShortKeysFolder = this.txtShortKeysSavePath.Text;
         }
         private bool removeCmds(List<App> currentShortkeys, List<App> newshortKeys)
         {
             Cmds cmd = new Cmds();
+            cmd.RemoveAll(Common.Config.ShortKeysFolder);
             foreach (var item in currentShortkeys)
                 if (newshortKeys.FirstOrDefault(k => k.Name == item.Name && k.Location == item.Location) == null)
                     cmd.RemoveCmd(item.ShortKey, Common.Config.ShortKeysFolder);
@@ -177,6 +218,12 @@ namespace SysSK
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (this.saveChange())
+                this.btnSubmit.Enabled = false;
         }
     }
 }

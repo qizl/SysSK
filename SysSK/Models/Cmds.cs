@@ -57,5 +57,20 @@ namespace SysSK.Models
 
             return true;
         }
+
+        /// <summary>
+        /// 移除所有命令文件
+        /// </summary>
+        /// <param name="cmdsFolder"></param>
+        /// <returns></returns>
+        public bool RemoveAll(string cmdsFolder)
+        {
+            FileInfo[] files = new DirectoryInfo(cmdsFolder).GetFiles();
+            foreach (var item in files)
+                if (item.Extension == ".bat")
+                    File.Delete(item.FullName);
+
+            return true;
+        }
     }
 }

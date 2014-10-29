@@ -71,5 +71,16 @@ namespace SysSK.Models
 
             return true;
         }
+
+        /// <summary>
+        /// 判断给定值是否在系统环境变量Path中
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool IsValueInSystemEnvironmentVariable_Path(string value)
+        {
+            string str = Environment.GetEnvironmentVariable("Path");
+            return str.Contains(value);
+        }
     }
 }

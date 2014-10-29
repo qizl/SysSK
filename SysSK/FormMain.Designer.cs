@@ -46,6 +46,7 @@
             this.cbxEnabledShortKeys = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtChooseApp = new System.Windows.Forms.TextBox();
+            this.btnChooseApp = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.clmPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmShortKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnChooseApp = new System.Windows.Forms.Button();
             this.plFoot.SuspendLayout();
             this.plBody.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -98,7 +98,7 @@
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "应用";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
             // 
@@ -188,6 +188,7 @@
             this.txtShortKeysSavePath.ReadOnly = true;
             this.txtShortKeysSavePath.Size = new System.Drawing.Size(473, 26);
             this.txtShortKeysSavePath.TabIndex = 3;
+            this.txtShortKeysSavePath.TextChanged += new System.EventHandler(this.txtShortKeysSavePath_TextChanged);
             // 
             // btnChooseShortKeysSavePath
             // 
@@ -229,6 +230,7 @@
             this.cbxEnabledShortKeys.TabIndex = 0;
             this.cbxEnabledShortKeys.Text = "启用快捷键";
             this.cbxEnabledShortKeys.UseVisualStyleBackColor = true;
+            this.cbxEnabledShortKeys.CheckedChanged += new System.EventHandler(this.cbxEnabledShortKeys_CheckedChanged);
             // 
             // tabPage2
             // 
@@ -256,6 +258,17 @@
             this.txtChooseApp.ReadOnly = true;
             this.txtChooseApp.Size = new System.Drawing.Size(348, 26);
             this.txtChooseApp.TabIndex = 6;
+            // 
+            // btnChooseApp
+            // 
+            this.btnChooseApp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnChooseApp.Location = new System.Drawing.Point(449, 334);
+            this.btnChooseApp.Name = "btnChooseApp";
+            this.btnChooseApp.Size = new System.Drawing.Size(86, 28);
+            this.btnChooseApp.TabIndex = 4;
+            this.btnChooseApp.Text = "浏览...";
+            this.btnChooseApp.UseVisualStyleBackColor = true;
+            this.btnChooseApp.Click += new System.EventHandler(this.btnChooseApp_Click);
             // 
             // btnAdd
             // 
@@ -307,6 +320,7 @@
             this.dgvShortKeys.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvShortKeys.Size = new System.Drawing.Size(616, 281);
             this.dgvShortKeys.TabIndex = 0;
+            this.dgvShortKeys.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvShortKeys_EditingControlShowing);
             // 
             // clmName
             // 
@@ -339,17 +353,6 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 1000;
-            // 
-            // btnChooseApp
-            // 
-            this.btnChooseApp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnChooseApp.Location = new System.Drawing.Point(449, 334);
-            this.btnChooseApp.Name = "btnChooseApp";
-            this.btnChooseApp.Size = new System.Drawing.Size(86, 28);
-            this.btnChooseApp.TabIndex = 4;
-            this.btnChooseApp.Text = "浏览...";
-            this.btnChooseApp.UseVisualStyleBackColor = true;
-            this.btnChooseApp.Click += new System.EventHandler(this.btnChooseApp_Click);
             // 
             // FormMain
             // 
