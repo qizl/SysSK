@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace SysSK.Models
@@ -49,6 +50,7 @@ namespace SysSK.Models
             {
                 str += ";" + value;
                 Environment.SetEnvironmentVariable("Path", str);
+                NotifyOS.NotifyOS1();
             }
 
             return true;
@@ -69,9 +71,43 @@ namespace SysSK.Models
             {
                 str = str.Replace(value, "");
                 Environment.SetEnvironmentVariable("Path", str);
+                NotifyOS.NotifyOS1();
             }
 
             return true;
         }
     }
+
+    public class NotifyOS
+    {
+        [Flags]
+        public enum SendMessageTimeoutFlags : uint
+        {
+            SMTO_NORMAL = 0x0000,
+            SMTO_BLOCK = 0x0001,
+            SMTO_ABORTIFHUNG = 0x0002,
+            SMTO_NOTIMEOUTIFNOTHUNG = 0x0008
+        }
+        const int WM_SETTINGCHANGE = 0x001A;
+        const int HWND_BROADCAST = 0xffff;
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern IntPtr SendMessageTimeout(
+           IntPtr windowHandle,
+           uint Msg,
+           IntPtr wParam,
+           string lParam,
+           SendMessageTimeoutFlags flags,
+           uint timeout,
+           out IntPtr result
+           );
+
+
+        public static void NotifyOS1()
+        {
+            IntPtr result1;
+            SendMessageTimeout(new IntPtr(HWND_BROADCAST), WM_SETTINGCHANGE, IntPtr.Zero, "Environment", SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 200, out result1);
+        }
+    }
+
 }
