@@ -46,7 +46,7 @@
             this.cbxEnabledShortKeys = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtChooseApp = new System.Windows.Forms.TextBox();
-            this.btnChooseApp = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvShortKeys = new System.Windows.Forms.DataGridView();
@@ -55,6 +55,7 @@
             this.clmPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmShortKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnChooseApp = new System.Windows.Forms.Button();
             this.plFoot.SuspendLayout();
             this.plBody.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -233,6 +234,7 @@
             // 
             this.tabPage2.Controls.Add(this.txtChooseApp);
             this.tabPage2.Controls.Add(this.btnChooseApp);
+            this.tabPage2.Controls.Add(this.btnAdd);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.dgvShortKeys);
@@ -252,20 +254,19 @@
             this.txtChooseApp.Location = new System.Drawing.Point(95, 334);
             this.txtChooseApp.Name = "txtChooseApp";
             this.txtChooseApp.ReadOnly = true;
-            this.txtChooseApp.Size = new System.Drawing.Size(440, 26);
+            this.txtChooseApp.Size = new System.Drawing.Size(348, 26);
             this.txtChooseApp.TabIndex = 6;
             // 
-            // btnChooseApp
+            // btnAdd
             // 
-            this.btnChooseApp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnChooseApp.Enabled = false;
-            this.btnChooseApp.Location = new System.Drawing.Point(541, 333);
-            this.btnChooseApp.Name = "btnChooseApp";
-            this.btnChooseApp.Size = new System.Drawing.Size(86, 28);
-            this.btnChooseApp.TabIndex = 4;
-            this.btnChooseApp.Text = "浏览...";
-            this.btnChooseApp.UseVisualStyleBackColor = true;
-            this.btnChooseApp.Click += new System.EventHandler(this.btnChooseApp_Click);
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAdd.Location = new System.Drawing.Point(541, 333);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(86, 28);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "添加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label4
             // 
@@ -339,6 +340,17 @@
             this.Column1.ReadOnly = true;
             this.Column1.Width = 1000;
             // 
+            // btnChooseApp
+            // 
+            this.btnChooseApp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnChooseApp.Location = new System.Drawing.Point(449, 334);
+            this.btnChooseApp.Name = "btnChooseApp";
+            this.btnChooseApp.Size = new System.Drawing.Size(86, 28);
+            this.btnChooseApp.TabIndex = 4;
+            this.btnChooseApp.Text = "浏览...";
+            this.btnChooseApp.UseVisualStyleBackColor = true;
+            this.btnChooseApp.Click += new System.EventHandler(this.btnChooseApp_Click);
+            // 
             // FormMain
             // 
             this.AcceptButton = this.btnOk;
@@ -395,8 +407,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmShortKey;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TextBox txtChooseApp;
-        private System.Windows.Forms.Button btnChooseApp;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnChooseApp;
 
     }
 }
