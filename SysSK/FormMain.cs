@@ -48,7 +48,10 @@ namespace SysSK
             this.txtShortKeysSavePath.Text = Common.Config.ShortKeysFolder;
 
             if (!Directory.Exists(Common.Config.ShortKeysFolder))
-                Directory.CreateDirectory(Common.Config.ShortKeysFolder);
+            {
+                Directory.CreateDirectory(Common.DefaultConfig.ShortKeysFolder);
+                Common.Config.ShortKeysFolder = Common.DefaultConfig.ShortKeysFolder;
+            }
 
             /*
              * 保存命令路径到系统环境变量Path中
