@@ -55,7 +55,7 @@
             this.clmType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmShortKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plFoot.SuspendLayout();
             this.plBody.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -310,7 +310,7 @@
             this.clmType,
             this.clmPath,
             this.clmShortKey,
-            this.Column1});
+            this.clmRemark});
             this.dgvShortKeys.Location = new System.Drawing.Point(11, 20);
             this.dgvShortKeys.Name = "dgvShortKeys";
             this.dgvShortKeys.RowHeadersVisible = false;
@@ -331,25 +331,24 @@
             this.clmType.HeaderText = "类型";
             this.clmType.Name = "clmType";
             this.clmType.ReadOnly = true;
+            this.clmType.Width = 60;
             // 
             // clmPath
             // 
             this.clmPath.HeaderText = "路径";
             this.clmPath.Name = "clmPath";
             this.clmPath.ReadOnly = true;
-            this.clmPath.Width = 250;
             // 
             // clmShortKey
             // 
             this.clmShortKey.HeaderText = "快捷键";
             this.clmShortKey.Name = "clmShortKey";
             // 
-            // Column1
+            // clmRemark
             // 
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 1000;
+            this.clmRemark.HeaderText = "备注";
+            this.clmRemark.Name = "clmRemark";
+            this.clmRemark.Width = 1000;
             // 
             // FormMain
             // 
@@ -409,7 +408,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmType;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmShortKey;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmRemark;
 
     }
 }

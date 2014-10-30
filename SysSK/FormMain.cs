@@ -69,7 +69,7 @@ namespace SysSK
              */
             this.dgvShortKeys.Rows.Clear();
             foreach (var app in Common.Config.ShortKeys)
-                this.dgvShortKeys.Rows.Add(app.Name, app.Type, app.Location, app.ShortKey);
+                this.dgvShortKeys.Rows.Add(app.Name, app.Type, app.Location, app.ShortKey, app.Remark);
 
             /*
              * 更新配置
@@ -186,6 +186,7 @@ namespace SysSK
                         Type = item.Cells[1].Value == null ? AppTypes.Cmd : (AppTypes)Enum.Parse(typeof(AppTypes), item.Cells[1].Value.ToString()),
                         Location = item.Cells[2].Value == null ? string.Empty : item.Cells[2].Value.ToString(),
                         ShortKey = item.Cells[3].Value == null ? string.Empty : item.Cells[3].Value.ToString(),
+                        Remark = item.Cells[4].Value == null ? string.Empty : item.Cells[4].Value.ToString(),
                     };
                     apps.Add(app);
                 }
