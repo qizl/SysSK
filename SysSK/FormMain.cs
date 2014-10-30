@@ -33,12 +33,12 @@ namespace SysSK
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            this.loadConfig();
+            this.loadConfig(Common.ConfigPath);
             this.initialize();
         }
-        void loadConfig()
+        void loadConfig(string path)
         {
-            Common.Config = Config.Load(Common.ConfigPath);
+            Common.Config = Config.Load(path);
             if (Common.Config == null)
                 Common.Config = Common.DefaultConfig.Clone() as Config;
         }
@@ -46,6 +46,9 @@ namespace SysSK
         {
             this.cbxEnabledShortKeys.Checked = Common.Config.IsEnabled;
             this.txtShortKeysSavePath.Text = Common.Config.ShortKeysFolder;
+
+            if (!Directory.Exists(Common.Config.ShortKeysFolder))
+                Directory.CreateDirectory(Common.Config.ShortKeysFolder);
 
             /*
              * 保存命令路径到系统环境变量Path中
@@ -63,6 +66,7 @@ namespace SysSK
             foreach (var item in apps)
                 if (Common.Config.ShortKeys.FirstOrDefault(s => s.Name == item.Name) == null)
                     Common.Config.ShortKeys.Add(item);
+            this.createCmds(Common.Config.ShortKeys);
 
             /*
              * 从内存变量中加载应用列表及快捷键
@@ -109,6 +113,27 @@ namespace SysSK
                 this.initialize();
 
                 this._isChanged = true;
+            }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.Title = "请选择要导入的系统快捷键配置文件：";
+                dialog.Multiselect = false;
+                dialog.Filter = "系统快捷键配置文件(*.xml)|*.xml";
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    Common.Config = Config.Load(dialog.FileName);
+                    if (Common.Config != null)
+                    {
+                        this.initialize();
+                        MessageBox.Show("导入成功！");
+                    }
+                    else
+                        MessageBox.Show("错误的配置文件！");
+                }
             }
         }
 
@@ -193,7 +218,7 @@ namespace SysSK
             }
 
             this.removeCmds(Common.Config.ShortKeys, apps);
-            this.createCmds(Common.Config.ShortKeys, apps);
+            this.createCmds(apps);
 
             Common.Config.ShortKeys.Clear();
             Common.Config.ShortKeys.AddRange(apps);
@@ -217,7 +242,7 @@ namespace SysSK
 
             return true;
         }
-        private bool createCmds(List<Cmd> currentShortkeys, List<Cmd> newshortKeys)
+        private bool createCmds(List<Cmd> newshortKeys)
         {
             CmdControl cmd = new CmdControl();
             foreach (var item in newshortKeys)
@@ -234,7 +259,12 @@ namespace SysSK
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (this.saveChange())
+            if (this._isChanged)
+            {
+                if (this.saveChange())
+                    this.Close();
+            }
+            else
                 this.Close();
         }
 

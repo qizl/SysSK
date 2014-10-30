@@ -38,6 +38,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gbxConfig = new System.Windows.Forms.GroupBox();
+            this.btnImport = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
             this.txtShortKeysSavePath = new System.Windows.Forms.TextBox();
             this.btnChooseShortKeysSavePath = new System.Windows.Forms.Button();
@@ -153,6 +154,7 @@
             // 
             // gbxConfig
             // 
+            this.gbxConfig.Controls.Add(this.btnImport);
             this.gbxConfig.Controls.Add(this.btnRestore);
             this.gbxConfig.Controls.Add(this.txtShortKeysSavePath);
             this.gbxConfig.Controls.Add(this.btnChooseShortKeysSavePath);
@@ -166,6 +168,17 @@
             this.gbxConfig.TabIndex = 0;
             this.gbxConfig.TabStop = false;
             this.gbxConfig.Text = "配置";
+            // 
+            // btnImport
+            // 
+            this.btnImport.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnImport.Location = new System.Drawing.Point(211, 160);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(172, 28);
+            this.btnImport.TabIndex = 3;
+            this.btnImport.Text = "导入配置";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnRestore
             // 
@@ -408,6 +421,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmShortKey;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmRemark;
+        private System.Windows.Forms.Button btnImport;
 
     }
 }
