@@ -6,6 +6,9 @@ using System.Text;
 
 namespace SysSK.Models
 {
+    /// <summary>
+    /// 注册表操作类
+    /// </summary>
     public class Regedit
     {
         /// <summary>
@@ -44,7 +47,7 @@ namespace SysSK.Models
         /// <returns></returns>
         public bool AddSystemEnvironmentVariable_Path(string value)
         {
-            string str = Environment.GetEnvironmentVariable("Path");
+            string str = Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
             if (!str.Contains(value))
             {
                 str += ";" + value;
@@ -66,7 +69,7 @@ namespace SysSK.Models
         public bool RemoveSystemEnvironmentVariable_Path(string value)
         {
             value = ";" + value;
-            string str = Environment.GetEnvironmentVariable("Path");
+            string str = Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
             if (str.Contains(value))
             {
                 str = str.Replace(value, "");
@@ -87,7 +90,7 @@ namespace SysSK.Models
         /// <returns></returns>
         public bool IsValueInSystemEnvironmentVariable_Path(string value)
         {
-            string str = Environment.GetEnvironmentVariable("Path");
+            string str = Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
             return str.Contains(value);
         }
     }

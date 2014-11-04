@@ -1,0 +1,6 @@
+E:\PL\MyProjects\GitHub\SysSK\SharpSerializerLibrary\bin\Debug\SharpSerializerLibrary.xml
+E:\PL\MyProjects\GitHub\SysSK\SharpSerializerLibrary\bin\Debug\SharpSerializerLibrary.dll
+E:\PL\MyProjects\GitHub\SysSK\SharpSerializerLibrary\bin\Debug\SharpSerializerLibrary.pdb
+E:\PL\MyProjects\GitHub\SysSK\SharpSerializerLibrary\obj\Debug\SharpSerializerLibrary.csprojResolveAssemblyReference.cache
+E:\PL\MyProjects\GitHub\SysSK\SharpSerializerLibrary\obj\Debug\SharpSerializerLibrary.dll
+E:\PL\MyProjects\GitHub\SysSK\SharpSerializerLibrary\obj\Debug\SharpSerializerLibrary.pdb

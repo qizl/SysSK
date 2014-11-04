@@ -13,6 +13,7 @@ namespace SysSK
 {
     public partial class FormMain : Form
     {
+        #region Members
         private bool _isChanged
         {
             get
@@ -26,11 +27,16 @@ namespace SysSK
         }
 
         private Regedit _regedit = new Regedit();
+        #endregion
+
+        #region Structures
         public FormMain()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Initializes
         private void FormMain_Load(object sender, EventArgs e)
         {
             this.loadConfig(Common.ConfigPath);
@@ -86,7 +92,9 @@ namespace SysSK
 
             this._isChanged = false;
         }
+        #endregion
 
+        #region Methods Tab_Normal
         private void cbxEnabledShortKeys_CheckedChanged(object sender, EventArgs e)
         {
             this._isChanged = true;
@@ -139,7 +147,9 @@ namespace SysSK
                 }
             }
         }
+        #endregion
 
+        #region Methods Tab_Shortkeys
         private void dgvShortKeys_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             this._isChanged = true;
@@ -200,7 +210,9 @@ namespace SysSK
                 }
             }
         }
+        #endregion
 
+        #region Methods SaveChanges
         private void loadChange()
         {
             List<Cmd> apps = new List<Cmd>();
@@ -235,6 +247,12 @@ namespace SysSK
 
             Common.Config.ShortKeysFolder = this.txtShortKeysSavePath.Text;
         }
+        /// <summary>
+        /// 移除快捷键为空的命令
+        /// </summary>
+        /// <param name="currentShortkeys"></param>
+        /// <param name="newshortKeys"></param>
+        /// <returns></returns>
         private bool removeCmds(List<Cmd> currentShortkeys, List<Cmd> newshortKeys)
         {
             CmdControl cmd = new CmdControl();
@@ -245,6 +263,11 @@ namespace SysSK
 
             return true;
         }
+        /// <summary>
+        /// 创建新命令
+        /// </summary>
+        /// <param name="newshortKeys"></param>
+        /// <returns></returns>
         private bool createCmds(List<Cmd> newshortKeys)
         {
             CmdControl cmd = new CmdControl();
@@ -253,7 +276,7 @@ namespace SysSK
 
             return true;
         }
-        private bool saveChange()
+        private bool saveChanges()
         {
             this.loadChange();
 
@@ -264,7 +287,7 @@ namespace SysSK
         {
             if (this._isChanged)
             {
-                if (this.saveChange())
+                if (this.saveChanges())
                     this.Close();
             }
             else
@@ -278,11 +301,12 @@ namespace SysSK
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (this.saveChange())
+            if (this.saveChanges())
             {
                 this.btnSubmit.Enabled = false;
                 this.initialize();
             }
         }
+        #endregion
     }
 }
