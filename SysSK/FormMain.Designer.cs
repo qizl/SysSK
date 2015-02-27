@@ -87,6 +87,7 @@
             this.btnHelp.TabIndex = 3;
             this.btnHelp.Text = "帮助";
             this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // btnSubmit
             // 

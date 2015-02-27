@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -306,6 +307,11 @@ namespace SysSK
                 this.btnSubmit.Enabled = false;
                 this.initialize();
             }
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://enjoycodes.com/Home/ViewNote/def5effa-de8d-4fd7-ae0e-5c710e38ddb5");
         }
         #endregion
     }

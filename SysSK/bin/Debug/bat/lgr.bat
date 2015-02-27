@@ -1,4 +1,4 @@
 @echo off
 E:
-cd "E:\PL\MyProjects\SVN\Logger\trunk\src\Logger\LogAnalyzer\bin\Debug"
+cd "E:\PL\MyProjects\GitHub\Logger\LogAnalyzer\bin\Debug"
 start LogAnalyzer.exe
