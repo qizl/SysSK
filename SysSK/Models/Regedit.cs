@@ -55,7 +55,7 @@ namespace SysSK.Models
                 {
                     Environment.SetEnvironmentVariable("Path", str, EnvironmentVariableTarget.Machine);
                 }
-                catch { return false; }
+                catch (Exception ex) { return false; }
             }
 
             return true;
