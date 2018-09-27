@@ -6,7 +6,7 @@
 系统第一次运行会扫描注册表，自动添加部分快捷键，可修改快捷键。  
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/1.png" >  
 <h2>示例一，添加应用（qq）</h2>  
-1.打开程序，切换到快捷键标签，点击【浏览】按钮，找到qq安装路径，并选择qq.exe。  
+1.打开程序，切换到快捷键标签，点击【浏览】按钮，找到qq安装路径，双击打开qq.exe。  
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/2.png">  
 2.点击【添加】=>【应用】或【确定】，保存配置。  
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/3.png">  
