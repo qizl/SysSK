@@ -19,7 +19,7 @@
 2.将表格滚动条滚动到最底部，找到新输入的一行数据，双击快捷键单元格，改为r。  
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/7.png">    
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/8.png">   
-3.点击【应用】或【确定】，保存配置。    
+3.点击【应用】或【确定】，保存配置。  
 4.打开运行窗口（Win+R），输入r并回车，运行关机命令。    
 <h2>下载地址</h2>  
 https://github.com/qizl/SysSK/raw/master/apps/SysSK-Release.rar  
