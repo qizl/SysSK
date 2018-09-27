@@ -3,7 +3,7 @@
 通过本软件配置打开某个程序或命令的快捷键，之后通过Win+R打开系统运行窗口，输入配置的指令即可快速打开程序或命令。  
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/4.png" >  
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/5.png">  
-系统第一次运行会扫描注册表，自动添加部分指令。  
+系统第一次运行会扫描注册表，自动添加部分快捷键，可修改快捷键。  
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/1.png" >  
 <h2>示例一，添加应用（qq）</h2>  
 1.打开程序，切换到快捷键标签，点击【浏览】按钮，找到qq安装路径，并选择qq.exe。  
