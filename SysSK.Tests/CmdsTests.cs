@@ -1,9 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SysSK.Models;
-using System.IO;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SysSKTests
+namespace EnjoyCodes.SysSK.Tests
 {
     [TestClass]
     public class CmdsTests

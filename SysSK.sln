@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysSK", "SysSK.csproj", "{5CF48520-BE06-4E98-8E2F-03682FA31AC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysSK", "SysSK\SysSK.csproj", "{5CF48520-BE06-4E98-8E2F-03682FA31AC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysSKTests", "..\SysSKTests\SysSKTests.csproj", "{18FCFD5E-1CA8-4218-AFE0-F69CB4BC8DBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysSK.Tests", "SysSK.Tests\SysSK.Tests.csproj", "{18FCFD5E-1CA8-4218-AFE0-F69CB4BC8DBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSerializerLibrary", "..\SharpSerializerLibrary\SharpSerializerLibrary.csproj", "{88AB738F-7A36-4C93-B808-B6CE2D3444B2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysSK.Tests", "..\SysSK.Tests\SysSK.Tests.csproj", "{F09844D9-5863-4B3A-BE10-E2747BB442B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSerializerLibrary", "SharpSerializerLibrary\SharpSerializerLibrary.csproj", "{88AB738F-7A36-4C93-B808-B6CE2D3444B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +27,11 @@ Global
 		{88AB738F-7A36-4C93-B808-B6CE2D3444B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88AB738F-7A36-4C93-B808-B6CE2D3444B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88AB738F-7A36-4C93-B808-B6CE2D3444B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F09844D9-5863-4B3A-BE10-E2747BB442B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F09844D9-5863-4B3A-BE10-E2747BB442B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F09844D9-5863-4B3A-BE10-E2747BB442B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F09844D9-5863-4B3A-BE10-E2747BB442B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CCED013-06B7-4EAC-A2C2-5ECDC0CAC071}
 	EndGlobalSection
 EndGlobal

@@ -26,18 +26,17 @@
 
 #endregion
 
-using System;
-using System.IO;
-using System.Xml;
 using SharpSerializerLibrary.Advanced;
-using SharpSerializerLibrary.Advanced.Binary;
 using SharpSerializerLibrary.Advanced.Deserializing;
 using SharpSerializerLibrary.Advanced.Serializing;
 using SharpSerializerLibrary.Advanced.Xml;
 using SharpSerializerLibrary.Core;
 using SharpSerializerLibrary.Deserializing;
 using SharpSerializerLibrary.Serializing;
+using System;
+using System.IO;
 using System.Runtime.CompilerServices;
+using System.Xml;
 
 namespace SharpSerializerLibrary
 {

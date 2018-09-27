@@ -1,9 +1,9 @@
-﻿using System;
+﻿using EnjoyCodes.SysSK.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SysSK.Models;
+using System;
 using System.IO;
 
-namespace SysSKTests
+namespace EnjoyCodes.SysSK.Tests
 {
     [TestClass]
     public class RegeditTests
@@ -27,6 +27,19 @@ namespace SysSKTests
         {
             Regedit regedit = new Regedit();
             regedit.RemoveSystemEnvironmentVariable_Path(Path.Combine(Environment.CurrentDirectory, "bat"));
+        }
+
+        [TestMethod]
+        public void AddSystemEnvironmentVariable_Path()
+        {
+            return;
+            string[] vars = new string[] { @"D:\PL\Cygwin\bin", @"D:\PL\Cygwin\sbin" };
+
+            Regedit regedit = new Regedit();
+            bool b = true;
+            foreach (var item in vars)
+                b &= regedit.AddSystemEnvironmentVariable_Path(item);
+            Assert.IsTrue(b);
         }
     }
 }

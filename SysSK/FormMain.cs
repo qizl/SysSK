@@ -1,16 +1,12 @@
-﻿using SysSK.Models;
+﻿using EnjoyCodes.SysSK.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace SysSK
+namespace EnjoyCodes.SysSK
 {
     public partial class FormMain : Form
     {

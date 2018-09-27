@@ -1,10 +1,8 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SysSK.Models
+namespace EnjoyCodes.SysSK.Models
 {
     /// <summary>
     /// 注册表操作类

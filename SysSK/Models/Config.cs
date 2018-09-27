@@ -1,10 +1,8 @@
 ﻿using SharpSerializerLibrary;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SysSK.Models
+namespace EnjoyCodes.SysSK.Models
 {
     public class Config : Object, ICloneable
     {

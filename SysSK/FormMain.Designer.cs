@@ -1,4 +1,4 @@
-﻿namespace SysSK
+﻿namespace EnjoyCodes.SysSK
 {
     partial class FormMain
     {
