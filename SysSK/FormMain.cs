@@ -68,9 +68,9 @@ namespace EnjoyCodes.SysSK
             /*
              * 读取注册表应用列表，保存到内存变量
              */
-            List<Cmd> apps = this._regedit.ReadApps();
+            var apps = this._regedit.ReadApps();
             foreach (var item in apps)
-                if (Common.Config.ShortKeys.FirstOrDefault(s => s.Name == item.Name) == null)
+                if (!Common.Config.ShortKeys.Any(s => s.Name == item.Name))
                     Common.Config.ShortKeys.Add(item);
             this.createCmds(Common.Config.ShortKeys);
 
@@ -255,7 +255,7 @@ namespace EnjoyCodes.SysSK
             CmdControl cmd = new CmdControl();
             cmd.RemoveAll(Common.Config.ShortKeysFolder);
             foreach (var item in currentShortkeys)
-                if (newshortKeys.FirstOrDefault(k => k.Name == item.Name && k.Location == item.Location) == null)
+                if (!newshortKeys.Any(k => k.Name == item.Name && k.Location == item.Location))
                     cmd.RemoveCmd(item, Common.Config.ShortKeysFolder);
 
             return true;
@@ -267,7 +267,7 @@ namespace EnjoyCodes.SysSK
         /// <returns></returns>
         private bool createCmds(List<Cmd> newshortKeys)
         {
-            CmdControl cmd = new CmdControl();
+            var cmd = new CmdControl();
             foreach (var item in newshortKeys)
                 cmd.CreateCmd(item, Common.Config.ShortKeysFolder);
 

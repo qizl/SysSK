@@ -15,7 +15,7 @@ namespace EnjoyCodes.SysSK.Models
         {
             try
             {
-                string fileName = Path.Combine(cmdsFolder, cmd.ShortKey + ".bat");
+                var fileName = Path.Combine(cmdsFolder, cmd.ShortKey + ".bat");
                 if (cmd.Type == AppTypes.App)
                 {
                     FileInfo file = new FileInfo(cmd.Location);
@@ -56,9 +56,9 @@ namespace EnjoyCodes.SysSK.Models
         /// <returns></returns>
         public bool RemoveCmd(Cmd cmd, string cmdsFolder)
         {
-            string fileName = Path.Combine(cmdsFolder, cmd.ShortKey + ".bat");
             try
             {
+                var fileName = Path.Combine(cmdsFolder, cmd.ShortKey + ".bat");
                 if (File.Exists(fileName))
                     File.Delete(fileName);
             }
