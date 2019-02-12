@@ -18,7 +18,7 @@ namespace EnjoyCodes.SysSK.Models
                 var fileName = Path.Combine(cmdsFolder, cmd.ShortKey + ".bat");
                 if (cmd.Type == AppTypes.App)
                 {
-                    FileInfo file = new FileInfo(cmd.Location);
+                    var file = new FileInfo(cmd.Location.Replace("\"",""));
                     if (!Directory.Exists(cmdsFolder))
                         Directory.CreateDirectory(cmdsFolder);
 

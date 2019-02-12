@@ -57,11 +57,17 @@ namespace EnjoyCodes.SysSK
                     ShortKey = "sk"
                 });
             }
+
+            if (!File.Exists(Common.Config.RunAsAministratorAppPath))
+            {
+                MessageBox.Show($"系统组件缺失！未找到：{new DirectoryInfo(Common.Config.RunAsAministratorAppPath).Name}");
+            }
         }
         void initialize()
         {
             this.cbxEnabledShortKeys.Checked = Common.Config.IsEnabled;
             this.txtShortKeysSavePath.Text = Common.Config.ShortKeysFolder;
+            this.cbxRequireAdmin.Enabled = false;
 
             if (!Directory.Exists(Common.Config.ShortKeysFolder))
             {
@@ -79,7 +85,7 @@ namespace EnjoyCodes.SysSK
             // 读取注册表应用列表，保存到内存变量
             this._regedit.ReadApps().ForEach(m =>
             {
-                if (!Common.Config.ShortKeys.Any(s => s.Name == m.Name))
+                if (File.Exists(m.Location) && !Common.Config.ShortKeys.Any(s => s.Location == m.Location))
                     Common.Config.ShortKeys.Add(m);
             });
             this.createCmds(Common.Config.ShortKeys);
@@ -175,19 +181,33 @@ namespace EnjoyCodes.SysSK
             {
                 if (File.Exists(this.txtChooseApp.Text))
                 {
-                    FileInfo file = new FileInfo(this.txtChooseApp.Text);
-                    string appName = file.Name;
-                    string shortkey = file.Name.Split('.')[0];
-                    string location = this.txtChooseApp.Text;
+                    var file = new FileInfo(this.txtChooseApp.Text);
+                    var appName = file.Name;
+                    var shortkey = file.Name.Split('.')[0];
+                    var location = this.txtChooseApp.Text;
 
-                    if (Common.Config.ShortKeys.FirstOrDefault(s => s.Type == AppTypes.App && s.Name == appName && s.Location == location) != null)
+                    if (Common.Config.ShortKeys.Any(s => s.RequireAdmin == this.cbxRequireAdmin.Checked && s.Location == location))
                     {
                         MessageBox.Show("该应用已添加到快捷键列表！");
                     }
                     else
                     {
-                        Common.Config.ShortKeys.Add(new Cmd() { Name = appName, Type = AppTypes.App, Location = location, ShortKey = shortkey });
-                        this.dgvShortKeys.Rows.Add(appName, AppTypes.App, location, shortkey);
+                        var cmd = new Cmd
+                        {
+                            Name = appName,
+                            Type = AppTypes.App,
+                            RequireAdmin = this.cbxRequireAdmin.Checked,
+                            Location = location,
+                            ShortKey = shortkey
+                        };
+                        if (this.cbxRequireAdmin.Checked)
+                        {
+                            cmd.Type = AppTypes.Cmd;
+                            cmd.Name = $"\"{Common.Config.RunAsAministratorAppPath}\" \"{location}\"";
+                            cmd.Location = location;
+                        }
+                        Common.Config.ShortKeys.Add(cmd);
+                        this.dgvShortKeys.Rows.Add(cmd.Name, cmd.Type, cmd.Location, cmd.ShortKey);
 
                         this.txtChooseApp.ResetText();
                         this._hasChanged = true;
@@ -195,16 +215,21 @@ namespace EnjoyCodes.SysSK
                 }
                 else
                 {
-                    string appName = this.txtChooseApp.Text;
-                    string shortkey = this.txtChooseApp.Text.Split('.')[0];
+                    var appName = this.txtChooseApp.Text;
+                    var shortkey = this.txtChooseApp.Text.Split('.')[0];
 
-                    if (Common.Config.ShortKeys.FirstOrDefault(s => s.Type == AppTypes.Cmd && s.Name == appName) != null)
+                    if (Common.Config.ShortKeys.Any(s => s.Type == AppTypes.Cmd && s.Name == appName))
                     {
                         MessageBox.Show("该命令已添加到快捷键列表！");
                     }
                     else
                     {
-                        Common.Config.ShortKeys.Add(new Cmd() { Name = appName, Type = AppTypes.Cmd, ShortKey = shortkey });
+                        Common.Config.ShortKeys.Add(new Cmd
+                        {
+                            Name = appName,
+                            Type = AppTypes.Cmd,
+                            ShortKey = shortkey
+                        });
                         this.dgvShortKeys.Rows.Add(appName, AppTypes.Cmd, string.Empty, shortkey);
 
                         this.txtChooseApp.ResetText();
@@ -213,23 +238,34 @@ namespace EnjoyCodes.SysSK
                 }
             }
         }
+
+        private void TxtChooseApp_TextChanged(object sender, EventArgs e)
+        {
+            // 判断是否允许勾选管理员复选框
+            if (File.Exists(Common.Config.RunAsAministratorAppPath))
+            {
+                this.cbxRequireAdmin.Enabled = File.Exists(this.txtChooseApp.Text);
+                if (!this.cbxRequireAdmin.Enabled)
+                    this.cbxRequireAdmin.Checked = false;
+            }
+        }
         #endregion
 
         #region Methods SaveChanges
         private void loadChange()
         {
-            List<Cmd> apps = new List<Cmd>();
+            var apps = new List<Cmd>();
             foreach (DataGridViewRow item in this.dgvShortKeys.Rows)
             {
-                if (item.Cells[3].Value != null && !string.IsNullOrWhiteSpace(item.Cells[3].Value.ToString()))
+                if (!string.IsNullOrWhiteSpace(item.Cells[3].Value?.ToString()))
                 {
-                    Cmd app = new Cmd()
+                    var app = new Cmd()
                     {
-                        Name = item.Cells[0].Value == null ? string.Empty : item.Cells[0].Value.ToString(),
-                        Type = item.Cells[1].Value == null ? AppTypes.Cmd : (AppTypes)Enum.Parse(typeof(AppTypes), item.Cells[1].Value.ToString()),
-                        Location = item.Cells[2].Value == null ? string.Empty : item.Cells[2].Value.ToString(),
-                        ShortKey = item.Cells[3].Value == null ? string.Empty : item.Cells[3].Value.ToString(),
-                        Remark = item.Cells[4].Value == null ? string.Empty : item.Cells[4].Value.ToString(),
+                        Name = item.Cells[0].Value?.ToString() ?? string.Empty,
+                        Type = (AppTypes)Enum.Parse(typeof(AppTypes), item.Cells[1].Value?.ToString() ?? "cmd"),
+                        Location = item.Cells[2].Value?.ToString() ?? string.Empty,
+                        ShortKey = item.Cells[3].Value?.ToString() ?? string.Empty,
+                        Remark = item.Cells[4].Value?.ToString() ?? string.Empty,
                     };
                     apps.Add(app);
                 }
@@ -258,7 +294,7 @@ namespace EnjoyCodes.SysSK
         /// <returns></returns>
         private bool removeCmds(List<Cmd> currentShortkeys, List<Cmd> newshortKeys)
         {
-            CmdControl cmd = new CmdControl();
+            var cmd = new CmdControl();
             cmd.RemoveAll(Common.Config.ShortKeysFolder);
             foreach (var item in currentShortkeys)
                 if (!newshortKeys.Any(k => k.Name == item.Name && k.Location == item.Location))

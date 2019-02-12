@@ -1,6 +1,7 @@
 ﻿using SharpSerializerLibrary;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace EnjoyCodes.SysSK.Models
 {
@@ -13,6 +14,10 @@ namespace EnjoyCodes.SysSK.Models
         /// </summary>
         public bool CanRemoveCurrentFolder { get; set; }
         public string ShortKeysFolder { get; set; }
+        /// <summary>
+        /// 以管理员权限运行应用的软件路径
+        /// </summary>
+        public string RunAsAministratorAppPath { get; } = Path.Combine(Environment.CurrentDirectory, "RunAsAministrator.exe");
         public List<Cmd> ShortKeys { get; set; }
 
         public DateTime CreateTime { get; set; }

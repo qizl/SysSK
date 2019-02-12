@@ -52,6 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvShortKeys = new System.Windows.Forms.DataGridView();
+            this.cbxRequireAdmin = new System.Windows.Forms.CheckBox();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,7 +141,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(647, 401);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -176,7 +177,7 @@
             this.btnImport.Location = new System.Drawing.Point(211, 160);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(172, 28);
-            this.btnImport.TabIndex = 3;
+            this.btnImport.TabIndex = 8;
             this.btnImport.Text = "导入配置";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
@@ -187,7 +188,7 @@
             this.btnRestore.Location = new System.Drawing.Point(31, 160);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(172, 28);
-            this.btnRestore.TabIndex = 3;
+            this.btnRestore.TabIndex = 7;
             this.btnRestore.Text = "还原默认配置";
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
@@ -200,7 +201,7 @@
             this.txtShortKeysSavePath.Name = "txtShortKeysSavePath";
             this.txtShortKeysSavePath.ReadOnly = true;
             this.txtShortKeysSavePath.Size = new System.Drawing.Size(473, 26);
-            this.txtShortKeysSavePath.TabIndex = 3;
+            this.txtShortKeysSavePath.TabIndex = 5;
             this.txtShortKeysSavePath.TextChanged += new System.EventHandler(this.txtShortKeysSavePath_TextChanged);
             // 
             // btnChooseShortKeysSavePath
@@ -209,7 +210,7 @@
             this.btnChooseShortKeysSavePath.Location = new System.Drawing.Point(522, 115);
             this.btnChooseShortKeysSavePath.Name = "btnChooseShortKeysSavePath";
             this.btnChooseShortKeysSavePath.Size = new System.Drawing.Size(86, 28);
-            this.btnChooseShortKeysSavePath.TabIndex = 2;
+            this.btnChooseShortKeysSavePath.TabIndex = 6;
             this.btnChooseShortKeysSavePath.Text = "浏览...";
             this.btnChooseShortKeysSavePath.UseVisualStyleBackColor = true;
             this.btnChooseShortKeysSavePath.Click += new System.EventHandler(this.btnChooseShortKeysSavePath_Click);
@@ -240,13 +241,14 @@
             this.cbxEnabledShortKeys.Location = new System.Drawing.Point(15, 30);
             this.cbxEnabledShortKeys.Name = "cbxEnabledShortKeys";
             this.cbxEnabledShortKeys.Size = new System.Drawing.Size(97, 20);
-            this.cbxEnabledShortKeys.TabIndex = 0;
+            this.cbxEnabledShortKeys.TabIndex = 4;
             this.cbxEnabledShortKeys.Text = "启用快捷键";
             this.cbxEnabledShortKeys.UseVisualStyleBackColor = true;
             this.cbxEnabledShortKeys.CheckedChanged += new System.EventHandler(this.cbxEnabledShortKeys_CheckedChanged);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cbxRequireAdmin);
             this.tabPage2.Controls.Add(this.txtChooseApp);
             this.tabPage2.Controls.Add(this.btnChooseApp);
             this.tabPage2.Controls.Add(this.btnAdd);
@@ -268,16 +270,17 @@
             this.txtChooseApp.Font = new System.Drawing.Font("Arial", 12F);
             this.txtChooseApp.Location = new System.Drawing.Point(60, 334);
             this.txtChooseApp.Name = "txtChooseApp";
-            this.txtChooseApp.Size = new System.Drawing.Size(383, 26);
-            this.txtChooseApp.TabIndex = 6;
+            this.txtChooseApp.Size = new System.Drawing.Size(316, 26);
+            this.txtChooseApp.TabIndex = 10;
+            this.txtChooseApp.TextChanged += new System.EventHandler(this.TxtChooseApp_TextChanged);
             // 
             // btnChooseApp
             // 
             this.btnChooseApp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnChooseApp.Location = new System.Drawing.Point(449, 333);
+            this.btnChooseApp.Location = new System.Drawing.Point(378, 333);
             this.btnChooseApp.Name = "btnChooseApp";
             this.btnChooseApp.Size = new System.Drawing.Size(86, 28);
-            this.btnChooseApp.TabIndex = 4;
+            this.btnChooseApp.TabIndex = 11;
             this.btnChooseApp.Text = "浏览...";
             this.btnChooseApp.UseVisualStyleBackColor = true;
             this.btnChooseApp.Click += new System.EventHandler(this.btnChooseApp_Click);
@@ -288,7 +291,7 @@
             this.btnAdd.Location = new System.Drawing.Point(541, 333);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 28);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "添加";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -305,11 +308,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 308);
+            this.label3.Location = new System.Drawing.Point(11, 298);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(372, 16);
+            this.label3.Size = new System.Drawing.Size(386, 32);
             this.label3.TabIndex = 2;
-            this.label3.Text = "请注意，快捷键可能会与系统命令重复，请验证是否可用。";
+            this.label3.Text = "请注意，快捷键可能会与系统命令重复，请验证是否可用。\r\n勾选管理员复选框，系统会以管理员权限运行绑定的快捷键。";
             // 
             // dgvShortKeys
             // 
@@ -329,9 +332,20 @@
             this.dgvShortKeys.RowHeadersVisible = false;
             this.dgvShortKeys.RowTemplate.Height = 23;
             this.dgvShortKeys.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvShortKeys.Size = new System.Drawing.Size(616, 281);
-            this.dgvShortKeys.TabIndex = 0;
+            this.dgvShortKeys.Size = new System.Drawing.Size(616, 275);
+            this.dgvShortKeys.TabIndex = 9;
             this.dgvShortKeys.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvShortKeys_EditingControlShowing);
+            // 
+            // cbxRequireAdmin
+            // 
+            this.cbxRequireAdmin.AutoSize = true;
+            this.cbxRequireAdmin.Location = new System.Drawing.Point(468, 338);
+            this.cbxRequireAdmin.Name = "cbxRequireAdmin";
+            this.cbxRequireAdmin.Size = new System.Drawing.Size(69, 20);
+            this.cbxRequireAdmin.TabIndex = 12;
+            this.cbxRequireAdmin.Tag = "";
+            this.cbxRequireAdmin.Text = "管理员";
+            this.cbxRequireAdmin.UseVisualStyleBackColor = true;
             // 
             // clmName
             // 
@@ -351,6 +365,7 @@
             this.clmPath.HeaderText = "路径";
             this.clmPath.Name = "clmPath";
             this.clmPath.ReadOnly = true;
+            this.clmPath.Width = 250;
             // 
             // clmShortKey
             // 
@@ -417,13 +432,13 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnChooseApp;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.CheckBox cbxRequireAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmType;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmShortKey;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmRemark;
-        private System.Windows.Forms.Button btnImport;
-
     }
 }
 
