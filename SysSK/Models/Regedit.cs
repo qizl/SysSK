@@ -15,10 +15,10 @@ namespace EnjoyCodes.SysSK.Models
         /// <returns></returns>
         public List<Cmd> ReadApps()
         {
-            List<Cmd> apps = new List<Cmd>();
+            var apps = new List<Cmd>();
 
-            string appKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths";
-            //string appKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
+            var appKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths";
+            //var appKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
             using (RegistryKey rk = Registry.LocalMachine.OpenSubKey(appKey))
             {
                 foreach (string skName in rk.GetSubKeyNames())
@@ -27,7 +27,12 @@ namespace EnjoyCodes.SysSK.Models
                     {
                         try
                         {
-                            Cmd app = new Cmd() { Name = skName, Location = sk.GetValue("").ToString(), ShortKey = skName.Split('.')[0] };
+                            var app = new Cmd
+                            {
+                                Name = skName,
+                                Location = sk.GetValue("").ToString(),
+                                ShortKey = skName.Split('.')[0]
+                            };
                             apps.Add(app);
                         }
                         catch { }
@@ -45,15 +50,15 @@ namespace EnjoyCodes.SysSK.Models
         /// <returns></returns>
         public bool AddSystemEnvironmentVariable_Path(string value)
         {
-            string str = Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
+            var str = Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
             if (!str.Contains(value))
             {
-                str += ";" + value;
+                str += $";{value}";
                 try
                 {
                     Environment.SetEnvironmentVariable("Path", str, EnvironmentVariableTarget.Machine);
                 }
-                catch (Exception ex) { return false; }
+                catch { return false; }
             }
 
             return true;
@@ -66,8 +71,8 @@ namespace EnjoyCodes.SysSK.Models
         /// <returns></returns>
         public bool RemoveSystemEnvironmentVariable_Path(string value)
         {
-            value = ";" + value;
-            string str = Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
+            value = $";{value}";
+            var str = Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
             if (str.Contains(value))
             {
                 str = str.Replace(value, "");
@@ -86,10 +91,6 @@ namespace EnjoyCodes.SysSK.Models
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public bool IsValueInSystemEnvironmentVariable_Path(string value)
-        {
-            string str = Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
-            return str.Contains(value);
-        }
+        public bool IsValueInSystemEnvironmentVariable_Path(string value) => Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine).Contains(value);
     }
 }

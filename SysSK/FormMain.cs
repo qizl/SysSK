@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace EnjoyCodes.SysSK
@@ -11,7 +12,7 @@ namespace EnjoyCodes.SysSK
     public partial class FormMain : Form
     {
         #region Members
-        private bool _isChanged
+        private bool _hasChanged
         {
             get
             {
@@ -43,7 +44,19 @@ namespace EnjoyCodes.SysSK
         {
             Common.Config = Config.Load(path);
             if (Common.Config == null)
+            {
+                // 读取默认配置
                 Common.Config = Common.DefaultConfig.Clone() as Config;
+
+                // 添加syssk快捷键
+                Common.Config.ShortKeys.Add(new Cmd
+                {
+                    Name = Path.GetFileName(Assembly.GetExecutingAssembly().Location),
+                    Type = AppTypes.App,
+                    Location = Assembly.GetExecutingAssembly().Location,
+                    ShortKey = "sk"
+                });
+            }
         }
         void initialize()
         {
@@ -56,50 +69,43 @@ namespace EnjoyCodes.SysSK
                 Common.Config.ShortKeysFolder = Common.DefaultConfig.ShortKeysFolder;
             }
 
-            /*
-             * 保存命令路径到系统环境变量Path中
-             */
+            // 保存命令路径到系统环境变量Path中
             if (Common.Config.CanRemoveCurrentFolder)
                 if (Common.Config.IsEnabled)
                     this._regedit.AddSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
                 else
                     this._regedit.RemoveSystemEnvironmentVariable_Path(Common.Config.ShortKeysFolder);
 
-            /*
-             * 读取注册表应用列表，保存到内存变量
-             */
-            var apps = this._regedit.ReadApps();
-            foreach (var item in apps)
-                if (!Common.Config.ShortKeys.Any(s => s.Name == item.Name))
-                    Common.Config.ShortKeys.Add(item);
+            // 读取注册表应用列表，保存到内存变量
+            this._regedit.ReadApps().ForEach(m =>
+            {
+                if (!Common.Config.ShortKeys.Any(s => s.Name == m.Name))
+                    Common.Config.ShortKeys.Add(m);
+            });
             this.createCmds(Common.Config.ShortKeys);
 
-            /*
-             * 从内存变量中加载应用列表及快捷键
-             */
+            // 从内存变量中加载应用列表及快捷键
             this.dgvShortKeys.Rows.Clear();
             foreach (var app in Common.Config.ShortKeys)
                 this.dgvShortKeys.Rows.Add(app.Name, app.Type, app.Location, app.ShortKey, app.Remark);
 
-            /*
-             * 更新配置
-             */
+            // 更新配置
             Common.Config.UpdateTime = DateTime.Now;
             Common.Config.Save(Common.ConfigPath);
 
-            this._isChanged = false;
+            this._hasChanged = false;
         }
         #endregion
 
         #region Methods Tab_Normal
         private void cbxEnabledShortKeys_CheckedChanged(object sender, EventArgs e)
         {
-            this._isChanged = true;
+            this._hasChanged = true;
         }
 
         private void txtShortKeysSavePath_TextChanged(object sender, EventArgs e)
         {
-            this._isChanged = true;
+            this._hasChanged = true;
         }
         private void btnChooseShortKeysSavePath_Click(object sender, EventArgs e)
         {
@@ -120,7 +126,7 @@ namespace EnjoyCodes.SysSK
                 Common.Config = Common.DefaultConfig.Clone() as Config;
                 this.initialize();
 
-                this._isChanged = true;
+                this._hasChanged = true;
             }
         }
 
@@ -149,7 +155,7 @@ namespace EnjoyCodes.SysSK
         #region Methods Tab_Shortkeys
         private void dgvShortKeys_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            this._isChanged = true;
+            this._hasChanged = true;
         }
 
         private void btnChooseApp_Click(object sender, EventArgs e)
@@ -184,7 +190,7 @@ namespace EnjoyCodes.SysSK
                         this.dgvShortKeys.Rows.Add(appName, AppTypes.App, location, shortkey);
 
                         this.txtChooseApp.ResetText();
-                        this._isChanged = true;
+                        this._hasChanged = true;
                     }
                 }
                 else
@@ -202,7 +208,7 @@ namespace EnjoyCodes.SysSK
                         this.dgvShortKeys.Rows.Add(appName, AppTypes.Cmd, string.Empty, shortkey);
 
                         this.txtChooseApp.ResetText();
-                        this._isChanged = true;
+                        this._hasChanged = true;
                     }
                 }
             }
@@ -282,7 +288,7 @@ namespace EnjoyCodes.SysSK
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (this._isChanged)
+            if (this._hasChanged)
             {
                 if (this.saveChanges())
                     this.Close();
@@ -305,10 +311,7 @@ namespace EnjoyCodes.SysSK
             }
         }
 
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-            Process.Start("http://enjoycodes.com/Home/ViewNote/def5effa-de8d-4fd7-ae0e-5c710e38ddb5");
-        }
+        private void btnHelp_Click(object sender, EventArgs e) => Process.Start("http://enjoycodes.com/ViewNote/def5effa-de8d-4fd7-ae0e-5c710e38ddb5");
         #endregion
     }
 }

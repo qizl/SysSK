@@ -23,7 +23,7 @@ namespace EnjoyCodes.SysSK.Models
             Config config = null;
             try
             {
-                SharpSerializer serializer = new SharpSerializer();
+                var serializer = new SharpSerializer();
                 config = serializer.Deserialize(path) as Config;
             }
             catch { }
@@ -34,7 +34,7 @@ namespace EnjoyCodes.SysSK.Models
         {
             try
             {
-                SharpSerializer serializer = new SharpSerializer();
+                var serializer = new SharpSerializer();
                 serializer.Serialize(this, path);
             }
             catch { return false; }
