@@ -9,7 +9,7 @@ namespace EnjoyCodes.SysSK.Models
         public static Config Config { get; set; }
         public static string ConfigPath = Path.Combine(Environment.CurrentDirectory, "Config.xml");
 
-        public static Config DefaultConfig = new Models.Config()
+        public static Config DefaultConfig = new Config
         {
             IsEnabled = true,
             CanRemoveCurrentFolder = true,

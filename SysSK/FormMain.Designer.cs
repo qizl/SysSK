@@ -228,9 +228,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 16);
+            this.label1.Size = new System.Drawing.Size(370, 32);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Win + R 输入快捷键，点击确定即可打开绑定的应用";
+            this.label1.Text = "Win + R 输入快捷键，点击确定即可打开绑定的应用或命令\r\nsk为打开本软件的默认快捷键";
             // 
             // cbxEnabledShortKeys
             // 
