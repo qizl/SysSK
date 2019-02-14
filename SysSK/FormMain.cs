@@ -85,7 +85,7 @@ namespace EnjoyCodes.SysSK
             // 读取注册表应用列表，保存到内存变量
             this._regedit.ReadApps().ForEach(m =>
             {
-                if (File.Exists(m.Location) && !Common.Config.ShortKeys.Any(s => s.Location == m.Location))
+                if (File.Exists(m.Location) && !Common.Config.ShortKeys.Any(s => s.Location.ToLower() == m.Location.ToLower()))
                     Common.Config.ShortKeys.Add(m);
             });
             this.createCmds(Common.Config.ShortKeys);
