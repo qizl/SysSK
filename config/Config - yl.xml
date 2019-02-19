@@ -10,468 +10,10 @@
       <Items>
         <Complex>
           <Properties>
-            <Simple name="Name" value="AppStore.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Tencent\AppStore\Bin\AppStore.exe" />
-            <Simple name="ShortKey" value="AppStore" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="cleanmaster.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\qizl\Cleanmaster\cleanmaster.exe" />
-            <Simple name="ShortKey" value="cls" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="chrome.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Users\qizl\AppData\Local\Google\Chrome\Application\chrome.exe" />
-            <Simple name="ShortKey" value="crm" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="excel.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\EXCEL.EXE" />
-            <Simple name="ShortKey" value="excel" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="firefox.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Mozilla Firefox\firefox.exe" />
-            <Simple name="ShortKey" value="ff" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="GitWCRev.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\TortoiseGit\bin\GitWCRev.exe" />
-            <Simple name="ShortKey" value="GitWCRev" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="GROOVE.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\GROOVE.EXE" />
-            <Simple name="ShortKey" value="GROOVE" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="rundll32 powrprof.dll,SetSuspendState" />
-            <Simple name="Type" value="Cmd" />
-            <Simple name="Location" value="" />
-            <Simple name="ShortKey" value="h" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="IEXPLORE.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Internet Explorer\IEXPLORE.EXE" />
-            <Simple name="ShortKey" value="ie" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="IEDIAG.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Internet Explorer\IEDIAGCMD.EXE" />
-            <Simple name="ShortKey" value="IEDIAG" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="IEDIAGCMD.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Internet Explorer\IEDIAGCMD.EXE" />
-            <Simple name="ShortKey" value="IEDIAGCMD" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="InetMgr.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\WINDOWS\system32\inetsrv\InetMgr.exe" />
-            <Simple name="ShortKey" value="InetMgr" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="snippingtool" />
-            <Simple name="Type" value="Cmd" />
-            <Simple name="Location" value="" />
-            <Simple name="ShortKey" value="jt" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="shutdown /l" />
-            <Simple name="Type" value="Cmd" />
-            <Simple name="Location" value="" />
-            <Simple name="ShortKey" value="l" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="licensemanagershellext.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\WINDOWS\System32\licensemanagershellext.exe" />
-            <Simple name="ShortKey" value="licensemanagershellext" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="Lync.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\Lync.exe" />
-            <Simple name="ShortKey" value="Lync" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="mip.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Common Files\Microsoft Shared\Ink\mip.exe" />
-            <Simple name="ShortKey" value="mip" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="mplayer2.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Windows Media Player\wmplayer.exe" />
-            <Simple name="ShortKey" value="mplayer2" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="MSACCESS.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\MSACCESS.EXE" />
-            <Simple name="ShortKey" value="MSACCESS" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="msoadfsb.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\msoadfsb.exe" />
-            <Simple name="ShortKey" value="msoadfsb" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="msoasb.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\msoasb.exe" />
-            <Simple name="ShortKey" value="msoasb" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="msoxmled.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\VFS\ProgramFilesCommonX64\Microsoft Shared\OFFICE16\MSOXMLED.EXE" />
-            <Simple name="ShortKey" value="msoxmled" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="MSPUB.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\MSPUB.EXE" />
-            <Simple name="ShortKey" value="MSPUB" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="OneNote.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\ONENOTE.EXE" />
-            <Simple name="ShortKey" value="OneNote" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="OUTLOOK.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\OUTLOOK.EXE" />
-            <Simple name="ShortKey" value="OUTLOOK" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="pbrush.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\WINDOWS\System32\mspaint.exe" />
-            <Simple name="ShortKey" value="pbrush" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="foxitPhantom.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Foxit Software\Foxit PhantomPDF\FoxitPhantomPDF.exe" />
-            <Simple name="ShortKey" value="pdf" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="FreePic2Pdf.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\FreePic2Pdf\FreePic2Pdf.exe" />
-            <Simple name="ShortKey" value="pdft" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="WINPROJ.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\WINPROJ.EXE" />
-            <Simple name="ShortKey" value="pjt" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="PowerShell.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell.exe" />
-            <Simple name="ShortKey" value="PowerShell" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="powerpnt.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\POWERPNT.EXE" />
-            <Simple name="ShortKey" value="ppt" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="Photoshop.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Adobe\Adobe Photoshop CC 2018\Photoshop.exe" />
-            <Simple name="ShortKey" value="ps" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="QQ.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Tencent\QQ\Bin\QQ.exe" />
-            <Simple name="ShortKey" value="QQ" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="shutdown /r /f /t 5" />
-            <Simple name="Type" value="Cmd" />
-            <Simple name="Location" value="" />
-            <Simple name="ShortKey" value="r" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="sdxhelper.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\VFS\ProgramFilesCommonX86\Microsoft Shared\OFFICE16\SDXHelper.exe" />
-            <Simple name="ShortKey" value="sdxhelper" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="SysSK.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\qizl\SysSK\SysSK.exe" />
-            <Simple name="ShortKey" value="sk" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="SKYPESERVER.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\SkypeSrv\SKYPESERVER.EXE" />
-            <Simple name="ShortKey" value="SKYPESERVER" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="SnippingTool.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\WINDOWS\system32\SnippingTool.exe" />
-            <Simple name="ShortKey" value="SnippingTool" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="SubWCRev.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\TortoiseSVN\bin\SubWCRev.exe" />
-            <Simple name="ShortKey" value="SubWCRev" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="TabTip.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe" />
-            <Simple name="ShortKey" value="TabTip" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="devenv.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\devenv.exe" />
-            <Simple name="ShortKey" value="vs" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="devenv.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" />
-            <Simple name="ShortKey" value="vs15" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="wab.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Windows Mail\wab.exe" />
-            <Simple name="ShortKey" value="wab" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="wabmig.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Windows Mail\wabmig.exe" />
-            <Simple name="ShortKey" value="wabmig" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="WinRAR.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\WinRAR\WinRAR.exe" />
-            <Simple name="ShortKey" value="WinRAR" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="wmplayer.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Windows Media Player\wmplayer.exe" />
-            <Simple name="ShortKey" value="wmplayer" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="Winword.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\WINWORD.EXE" />
-            <Simple name="ShortKey" value="word" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="WORDPAD.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="&quot;C:\Program Files\Windows NT\Accessories\WORDPAD.EXE&quot;" />
-            <Simple name="ShortKey" value="WORDPAD" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="WRITE.EXE" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="&quot;C:\Program Files\Windows NT\Accessories\WORDPAD.EXE&quot;" />
-            <Simple name="ShortKey" value="WRITE" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="WeChat.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Tencent\WeChat\WeChat.exe" />
-            <Simple name="ShortKey" value="wx" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="Thunder.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Thunder Network\Thunder\Program\Thunder.exe" />
-            <Simple name="ShortKey" value="xunl" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
             <Simple name="Name" value="Acrobat.exe" />
             <Simple name="Type" value="App" />
             <Simple name="Location" value="C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe" />
+            <Simple name="RequireAdmin" value="False" />
             <Simple name="ShortKey" value="Acrobat" />
             <Simple name="Remark" value="" />
           </Properties>
@@ -481,6 +23,7 @@
             <Simple name="Name" value="AcrobatInfo.exe" />
             <Simple name="Type" value="App" />
             <Simple name="Location" value="C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\AcrobatInfo.exe" />
+            <Simple name="RequireAdmin" value="False" />
             <Simple name="ShortKey" value="AcrobatInfo" />
             <Simple name="Remark" value="" />
           </Properties>
@@ -490,7 +33,158 @@
             <Simple name="Name" value="AcroDist.exe" />
             <Simple name="Type" value="App" />
             <Simple name="Location" value="C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrodist.exe" />
+            <Simple name="RequireAdmin" value="False" />
             <Simple name="ShortKey" value="AcroDist" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="AppStore.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Tencent\AppStore\Bin\AppStore.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="AppStore" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="cleanmaster.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\qizl\Cleanmaster\cleanmaster.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="cls" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="chrome.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Users\qizl\AppData\Local\Google\Chrome\Application\chrome.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="crm" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="excel.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\EXCEL.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="excel" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="firefox.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Mozilla Firefox\firefox.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="ff" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="GitWCRev.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\TortoiseGit\bin\GitWCRev.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="GitWCRev" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="GROOVE.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\GROOVE.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="GROOVE" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="rundll32 powrprof.dll,SetSuspendState" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="h" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="icofx3.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\icofx3\icofx3.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="icofx3" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="IEXPLORE.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Internet Explorer\IEXPLORE.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="ie" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="IEDIAG.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Internet Explorer\IEDIAGCMD.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="IEDIAG" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="IEDIAGCMD.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Internet Explorer\IEDIAGCMD.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="IEDIAGCMD" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="InetMgr.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\WINDOWS\system32\inetsrv\InetMgr.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="InetMgr" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="snippingtool" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="jt" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="shutdown /l" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="l" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
@@ -499,16 +193,18 @@
             <Simple name="Name" value="WindowsShade.exe" />
             <Simple name="Type" value="App" />
             <Simple name="Location" value="C:\Program Files (x86)\qizl\WindowsShade\WindowsShade.exe" />
+            <Simple name="RequireAdmin" value="False" />
             <Simple name="ShortKey" value="ld" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
         <Complex>
           <Properties>
-            <Simple name="Name" value="Shadowsocks.exe" />
+            <Simple name="Name" value="licensemanagershellext.exe" />
             <Simple name="Type" value="App" />
-            <Simple name="Location" value="G:\Shadowsocks-4.1.3.1\Shadowsocks.exe" />
-            <Simple name="ShortKey" value="ss" />
+            <Simple name="Location" value="C:\WINDOWS\System32\licensemanagershellext.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="licensemanagershellext" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
@@ -517,13 +213,434 @@
             <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; manage-bde -lock g: -Forcedismount" />
             <Simple name="Type" value="Cmd" />
             <Simple name="Location" value="" />
+            <Simple name="RequireAdmin" value="False" />
             <Simple name="ShortKey" value="lk" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="Lync.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\Lync.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="Lync" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="mip.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Common Files\Microsoft Shared\Ink\mip.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="mip" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="mplayer2.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Windows Media Player\wmplayer.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="mplayer2" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="MSACCESS.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\MSACCESS.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="MSACCESS" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="msoadfsb.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\msoadfsb.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="msoadfsb" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="msoasb.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\msoasb.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="msoasb" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="msoxmled.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\VFS\ProgramFilesCommonX64\Microsoft Shared\OFFICE16\MSOXMLED.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="msoxmled" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="MSPUB.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\MSPUB.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="MSPUB" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="OneNote.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\ONENOTE.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="OneNote" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="OUTLOOK.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\OUTLOOK.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="OUTLOOK" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="pbrush.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\WINDOWS\System32\mspaint.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="pbrush" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="foxitPhantom.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Foxit Software\Foxit PhantomPDF\FoxitPhantomPDF.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="pdf" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="FreePic2Pdf.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\FreePic2Pdf\FreePic2Pdf.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="pdft" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="WINPROJ.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\WINPROJ.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="pjt" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="PowerShell.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="PowerShell" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="powerpnt.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\POWERPNT.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="ppt" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="Photoshop.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Adobe\Adobe Photoshop CC 2018\Photoshop.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="ps" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="QQ.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Tencent\QQ\Bin\QQ.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="QQ" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="shutdown /r /f /t 5" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="r" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="sdxhelper.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\VFS\ProgramFilesCommonX86\Microsoft Shared\OFFICE16\SDXHelper.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="sdxhelper" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="SysSK.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\qizl\SysSK\SysSK.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="sk" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="SKYPESERVER.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\SkypeSrv\SKYPESERVER.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="SKYPESERVER" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="SnippingTool.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\WINDOWS\system32\SnippingTool.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="SnippingTool" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="Shadowsocks.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="G:\Shadowsocks-4.1.3.1\Shadowsocks.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="ss" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="SubWCRev.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\TortoiseSVN\bin\SubWCRev.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="SubWCRev" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="TabTip.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="TabTip" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="devenv.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\devenv.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="vs" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="devenv.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="vs15" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; &quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\devenv.exe&quot;" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\devenv.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="vsa" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="Code.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Microsoft VS Code\Code.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="vsc" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="wab.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Windows Mail\wab.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="wab" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="wabmig.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\Windows Mail\wabmig.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="wabmig" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="WinRAR.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\WinRAR\WinRAR.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="WinRAR" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="wmplayer.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Windows Media Player\wmplayer.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="wmplayer" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="Winword.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Office\Root\Office16\WINWORD.EXE" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="word" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="WORDPAD.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="&quot;C:\Program Files\Windows NT\Accessories\WORDPAD.EXE&quot;" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="WORDPAD" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="WRITE.EXE" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="&quot;C:\Program Files\Windows NT\Accessories\WORDPAD.EXE&quot;" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="WRITE" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="WeChat.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Tencent\WeChat\WeChat.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="wx" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="Thunder.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\Thunder Network\Thunder\Program\Thunder.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="xunl" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="openvpn-gui.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files\OpenVPN\bin\openvpn-gui.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="zb" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; &quot;C:\Program Files\Microsoft VS Code\Code.exe&quot;" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="C:\Program Files\Microsoft VS Code\Code.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="vsca" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; manage-bde -unlock g: -pw" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="ulk" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
       </Items>
     </Collection>
     <Simple name="CreateTime" value="11/12/2018 13:13:04" />
-    <Simple name="UpdateTime" value="01/18/2019 12:37:59" />
+    <Simple name="UpdateTime" value="02/18/2019 18:03:56" />
   </Properties>
 </Complex>
