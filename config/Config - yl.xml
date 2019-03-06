@@ -5,7 +5,7 @@
     <Simple name="ShortKeysFolder" value="C:\Program Files (x86)\qizl\SysSK\bat" />
     <Collection name="ShortKeys">
       <Properties>
-        <Simple name="Capacity" value="64" />
+        <Simple name="Capacity" value="128" />
       </Properties>
       <Items>
         <Complex>
@@ -55,6 +55,16 @@
             <Simple name="Location" value="C:\Program Files (x86)\qizl\Cleanmaster\cleanmaster.exe" />
             <Simple name="RequireAdmin" value="False" />
             <Simple name="ShortKey" value="cls" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; &quot;C:\WINDOWS\system32\cmd.exe&quot;" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="C:\WINDOWS\system32\cmd.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="cmda" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
@@ -480,11 +490,11 @@
         </Complex>
         <Complex>
           <Properties>
-            <Simple name="Name" value="devenv.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\devenv.exe" />
+            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; manage-bde -unlock g: -pw" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="" />
             <Simple name="RequireAdmin" value="False" />
-            <Simple name="ShortKey" value="vs" />
+            <Simple name="ShortKey" value="ulk" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
@@ -495,27 +505,27 @@
             <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" />
             <Simple name="RequireAdmin" value="False" />
             <Simple name="ShortKey" value="vs15" />
+            <Simple name="Remark" value="vs2017" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; &quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe&quot;" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="vsa15" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
         <Complex>
           <Properties>
-            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; &quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\devenv.exe&quot;" />
-            <Simple name="Type" value="Cmd" />
+            <Simple name="Name" value="devenv.exe" />
+            <Simple name="Type" value="App" />
             <Simple name="Location" value="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\devenv.exe" />
             <Simple name="RequireAdmin" value="False" />
-            <Simple name="ShortKey" value="vsa" />
-            <Simple name="Remark" value="" />
-          </Properties>
-        </Complex>
-        <Complex>
-          <Properties>
-            <Simple name="Name" value="Code.exe" />
-            <Simple name="Type" value="App" />
-            <Simple name="Location" value="C:\Program Files\Microsoft VS Code\Code.exe" />
-            <Simple name="RequireAdmin" value="False" />
-            <Simple name="ShortKey" value="vsc" />
-            <Simple name="Remark" value="" />
+            <Simple name="ShortKey" value="vs" />
+            <Simple name="Remark" value="vs2019p" />
           </Properties>
         </Complex>
         <Complex>
@@ -620,27 +630,57 @@
         </Complex>
         <Complex>
           <Properties>
-            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; &quot;C:\Program Files\Microsoft VS Code\Code.exe&quot;" />
-            <Simple name="Type" value="Cmd" />
-            <Simple name="Location" value="C:\Program Files\Microsoft VS Code\Code.exe" />
+            <Simple name="Name" value="dg.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\MyDrivers\DriverGenius\drivergenius.exe" />
             <Simple name="RequireAdmin" value="False" />
-            <Simple name="ShortKey" value="vsca" />
+            <Simple name="ShortKey" value="dg" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
         <Complex>
           <Properties>
-            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; manage-bde -unlock g: -pw" />
-            <Simple name="Type" value="Cmd" />
-            <Simple name="Location" value="" />
+            <Simple name="Name" value="qd.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\MyDrivers\DriverGenius\drivergenius.exe" />
             <Simple name="RequireAdmin" value="False" />
-            <Simple name="ShortKey" value="ulk" />
+            <Simple name="ShortKey" value="qd" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="qudong.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Program Files (x86)\MyDrivers\DriverGenius\drivergenius.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="qudong" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="Code.exe" />
+            <Simple name="Type" value="App" />
+            <Simple name="Location" value="C:\Users\qizl\AppData\Local\Programs\Microsoft VS Code\Code.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="vsc" />
+            <Simple name="Remark" value="" />
+          </Properties>
+        </Complex>
+        <Complex>
+          <Properties>
+            <Simple name="Name" value="&quot;C:\Program Files (x86)\qizl\SysSK\RunAsAministrator.exe&quot; &quot;C:\Users\qizl\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;" />
+            <Simple name="Type" value="Cmd" />
+            <Simple name="Location" value="C:\Users\qizl\AppData\Local\Programs\Microsoft VS Code\Code.exe" />
+            <Simple name="RequireAdmin" value="False" />
+            <Simple name="ShortKey" value="vsca" />
             <Simple name="Remark" value="" />
           </Properties>
         </Complex>
       </Items>
     </Collection>
     <Simple name="CreateTime" value="11/12/2018 13:13:04" />
-    <Simple name="UpdateTime" value="02/18/2019 18:03:56" />
+    <Simple name="UpdateTime" value="03/05/2019 17:16:25" />
   </Properties>
 </Complex>
