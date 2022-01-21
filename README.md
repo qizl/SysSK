@@ -20,11 +20,9 @@
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/7.png">    
 <img src="https://raw.githubusercontent.com/qizl/SysSK/master/imgs/8.png">   
 3.点击【应用】或【确定】，保存配置。<br/>  
-4.打开运行窗口（Win+R），输入r并回车，运行关机命令。    
+4.打开运行窗口（Win+R），输入s并回车，运行关机命令。    
 <h2>下载地址</h2>  
 https://github.com/qizl/SysSK/raw/master/apps/SysSK-Release.rar  
 <h2>有问题，可联系我</h2>  
-http://qizl.cn/<br/>  
-QQ:<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=745690244&amp;site=qq&amp;menu=yes">
-            745690244
-        </a>
+个人主页：http://qizl.cn/<br/>  
+QQ:<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=745690244&amp;site=qq&amp;menu=yes">745690244</a>
